@@ -1,12 +1,31 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, CheckCircle2, Star, Mail } from 'lucide-react';
+
+const QUOTES = [
+  { text: "Nunca es tarde para empezar.", bg: "bg-terracotta", textColor: "text-cream" },
+  { text: "Eres más poderosa de lo que crees.", bg: "bg-ink/85", textColor: "text-cream" },
+  { text: "Tu tiempo es ahora, no después.", bg: "bg-olive/90", textColor: "text-cream" },
+  { text: "Cada día es una nueva oportunidad.", bg: "bg-sand/95", textColor: "text-ink" },
+  { text: "Reinventarse es un acto de amor propio.", bg: "bg-cream/95", textColor: "text-ink" },
+  { text: "Vibrar es tu derecho, no un lujo.", bg: "bg-terracotta/80", textColor: "text-cream" },
+  { text: "Tu esencia es tu mayor fortaleza.", bg: "bg-olive", textColor: "text-cream" },
+  { text: "La transformación empieza con una decisión.", bg: "bg-cream/95", textColor: "text-ink" },
+];
 
 export default function Landing() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [activeQuote, setActiveQuote] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveQuote((prev) => (prev + 1) % QUOTES.length);
+    }, 2800);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -74,88 +93,101 @@ export default function Landing() {
                 className="pill-image w-full shadow-2xl object-cover object-top"
               />
 
-              {/* Badge 1 - derecha superior (posición "2 en punto") */}
+              {/* ── MOBILE: un badge a la vez rotando ── */}
+              <div className="lg:hidden absolute -bottom-16 left-0 right-0 flex justify-center">
+                <div className="relative h-16 w-full flex justify-center">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeQuote}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                      className={`absolute px-5 py-3 rounded-2xl shadow-lg backdrop-blur-md ${QUOTES[activeQuote].bg} max-w-[280px] text-center`}
+                    >
+                      <p className={`font-serif italic text-base leading-snug ${QUOTES[activeQuote].textColor}`}>
+                        "{QUOTES[activeQuote].text}"
+                      </p>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              </div>
+
+              {/* ── DESKTOP: 8 badges flotantes distribuidos ── */}
               <motion.div
                 animate={{ x: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[8%] -right-10 bg-terracotta text-cream px-5 py-3 rounded-2xl shadow-xl max-w-[185px]"
+                className="hidden lg:block absolute top-[8%] -right-10 bg-terracotta text-cream px-5 py-3 rounded-2xl shadow-xl max-w-[185px]"
               >
                 <p className="font-serif italic text-base md:text-lg leading-snug">
                   "Nunca es tarde para empezar."
                 </p>
               </motion.div>
 
-              {/* Badge 2 - izquierda superior (posición "10 en punto") */}
               <motion.div
                 animate={{ x: [0, -10, 0] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-                className="absolute top-[8%] -left-10 bg-ink/85 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg max-w-[185px]"
+                className="hidden lg:block absolute top-[8%] -left-10 bg-ink/85 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg max-w-[185px]"
               >
                 <p className="font-serif italic text-base md:text-lg text-cream leading-snug">
                   "Eres más poderosa de lo que crees."
                 </p>
               </motion.div>
 
-              {/* Badge 3 - izquierda media (posición "9 en punto") */}
               <motion.div
                 animate={{ x: [0, -8, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute top-[38%] -left-12 bg-olive/90 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg max-w-[180px]"
+                className="hidden lg:block absolute top-[38%] -left-12 bg-olive/90 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg max-w-[180px]"
               >
                 <p className="font-serif italic text-base md:text-lg text-cream leading-snug">
                   "Tu tiempo es ahora, no después."
                 </p>
               </motion.div>
 
-              {/* Badge 4 - derecha media (posición "3 en punto") */}
               <motion.div
                 animate={{ x: [0, 8, 0] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                className="absolute top-[38%] -right-10 bg-sand/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-terracotta/20 max-w-[185px]"
+                className="hidden lg:block absolute top-[38%] -right-10 bg-sand/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-terracotta/20 max-w-[185px]"
               >
                 <p className="font-serif italic text-base md:text-lg text-ink leading-snug">
                   "Cada día es una nueva oportunidad."
                 </p>
               </motion.div>
 
-              {/* Badge 5 - izquierda inferior (posición "8 en punto") */}
               <motion.div
                 animate={{ x: [0, -8, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute top-[68%] -left-10 bg-cream/95 backdrop-blur-md px-4 py-3 rounded-3xl shadow-xl border border-white/60 max-w-[200px]"
+                className="hidden lg:block absolute top-[68%] -left-10 bg-cream/95 backdrop-blur-md px-4 py-3 rounded-3xl shadow-xl border border-white/60 max-w-[200px]"
               >
                 <p className="font-serif italic text-base md:text-lg text-ink leading-snug">
                   "Reinventarse es un acto de amor propio."
                 </p>
               </motion.div>
 
-              {/* Badge 6 - derecha inferior (posición "4 en punto") */}
               <motion.div
                 animate={{ x: [0, 9, 0] }}
                 transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                className="absolute top-[68%] -right-10 bg-terracotta/80 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl max-w-[185px]"
+                className="hidden lg:block absolute top-[68%] -right-10 bg-terracotta/80 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl max-w-[185px]"
               >
                 <p className="font-serif italic text-base md:text-lg text-cream leading-snug">
                   "Vibrar es tu derecho, no un lujo."
                 </p>
               </motion.div>
 
-              {/* Badge 7 - abajo izquierda (posición "7 en punto") */}
               <motion.div
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                className="absolute -bottom-8 -left-8 bg-olive text-cream px-4 py-3 rounded-2xl shadow-md max-w-[185px]"
+                className="hidden lg:block absolute -bottom-8 -left-8 bg-olive text-cream px-4 py-3 rounded-2xl shadow-md max-w-[185px]"
               >
                 <p className="font-serif italic text-base md:text-lg leading-snug">
                   "Tu esencia es tu mayor fortaleza."
                 </p>
               </motion.div>
 
-              {/* Badge 8 - abajo derecha (posición "5 en punto") */}
               <motion.div
                 animate={{ y: [0, 7, 0] }}
                 transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
-                className="absolute -bottom-8 -right-8 bg-cream/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-sand max-w-[195px]"
+                className="hidden lg:block absolute -bottom-8 -right-8 bg-cream/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-sand max-w-[195px]"
               >
                 <p className="font-serif italic text-base md:text-lg text-ink leading-snug text-center">
                   "La transformación empieza con una decisión."
