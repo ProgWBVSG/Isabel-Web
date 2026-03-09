@@ -66,48 +66,91 @@ export default function Landing() {
                 referrerPolicy="no-referrer"
               />
 
-              {/* Floating badge - arriba a la derecha */}
+              {/* Badge 1 - arriba a la derecha */}
               <motion.div
-                animate={{ y: [0, -8, 0] }}
+                animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -right-6 bg-terracotta text-cream px-5 py-3 rounded-2xl shadow-xl"
+                className="absolute -top-8 -right-8 bg-terracotta text-cream px-5 py-3 rounded-2xl shadow-xl max-w-[190px]"
               >
-                <p className="font-serif italic text-sm leading-snug max-w-[160px]">
+                <p className="font-serif italic text-base md:text-lg leading-snug">
                   "Nunca es tarde para empezar."
                 </p>
               </motion.div>
 
-              {/* Floating badge - abajo a la izquierda */}
+              {/* Badge 2 - abajo a la izquierda */}
               <motion.div
-                animate={{ y: [0, 8, 0] }}
+                animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute -bottom-6 -left-6 bg-cream/90 backdrop-blur-md p-5 rounded-3xl shadow-xl border border-white/60 max-w-[200px]"
+                className="absolute -bottom-8 -left-8 bg-cream/95 backdrop-blur-md p-5 rounded-3xl shadow-xl border border-white/60 max-w-[210px]"
               >
-                <p className="font-serif italic text-sm text-ink leading-snug">
+                <p className="font-serif italic text-base md:text-lg text-ink leading-snug">
                   "Reinventarse es un acto de amor propio."
                 </p>
               </motion.div>
 
-              {/* Floating badge - mitad izquierda */}
+              {/* Badge 3 - mitad izquierda */}
               <motion.div
-                animate={{ x: [0, -6, 0] }}
+                animate={{ x: [0, -8, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute top-1/3 -left-10 bg-olive/90 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg max-w-[170px]"
+                className="absolute top-1/3 -left-12 bg-olive/90 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg max-w-[180px]"
               >
-                <p className="font-serif italic text-xs text-cream leading-snug">
+                <p className="font-serif italic text-base md:text-lg text-cream leading-snug">
                   "Tu tiempo es ahora, no después."
                 </p>
               </motion.div>
 
-              {/* Floating main quote - abajo expandida */}
+              {/* Badge 4 - arriba a la izquierda */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 1.2 }}
-                className="absolute -bottom-20 left-0 right-0 mx-auto bg-ink/80 backdrop-blur-md px-6 py-4 rounded-2xl shadow-2xl text-center"
+                animate={{ y: [0, -7, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+                className="absolute top-10 -left-10 bg-ink/85 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg max-w-[185px]"
               >
-                <p className="font-light text-xs text-cream/90 leading-relaxed italic">
-                  "El impacto genuino no nace de la fuerza, sino de la presencia. Suelta la carga de controlarlo todo, enciende tu luz y transfórmate en la inspiración que tu entorno necesita hoy."
+                <p className="font-serif italic text-base md:text-lg text-cream leading-snug">
+                  "Eres más poderosa de lo que crees."
+                </p>
+              </motion.div>
+
+              {/* Badge 5 - mitad derecha */}
+              <motion.div
+                animate={{ x: [0, 8, 0] }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                className="absolute top-1/2 -right-10 bg-sand/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-terracotta/20 max-w-[185px]"
+              >
+                <p className="font-serif italic text-base md:text-lg text-ink leading-snug">
+                  "Cada día es una nueva oportunidad."
+                </p>
+              </motion.div>
+
+              {/* Badge 6 - abajo a la derecha */}
+              <motion.div
+                animate={{ y: [0, 9, 0] }}
+                transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+                className="absolute -bottom-6 -right-8 bg-terracotta/80 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl max-w-[190px]"
+              >
+                <p className="font-serif italic text-base md:text-lg text-cream leading-snug">
+                  "Vibrar es tu derecho, no un lujo."
+                </p>
+              </motion.div>
+
+              {/* Badge 7 - arriba centro */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                className="absolute -top-6 left-1/4 bg-olive text-cream px-4 py-2 rounded-xl shadow-md max-w-[175px]"
+              >
+                <p className="font-serif italic text-sm md:text-base leading-snug">
+                  "Tu esencia es tu mayor fortaleza."
+                </p>
+              </motion.div>
+
+              {/* Badge 8 - bajo centro */}
+              <motion.div
+                animate={{ y: [0, 7, 0] }}
+                transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-cream/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-sand max-w-[200px]"
+              >
+                <p className="font-serif italic text-sm md:text-base text-ink leading-snug text-center">
+                  "La transformación empieza con una decisión."
                 </p>
               </motion.div>
             </div>
