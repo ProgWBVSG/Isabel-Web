@@ -42,12 +42,21 @@ export default function Landing() {
             <p className="text-lg md:text-xl text-ink-light mb-10 leading-relaxed max-w-lg font-light">
               Reinventá tu vida a los 50 con propósito y autenticidad. Caminar hacia tu propósito es una decisión, no una edad.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#inversion"
-                className="inline-flex items-center justify-center px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-ink hover:bg-terracotta transition-colors duration-300"
+                href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-terracotta hover:bg-terracotta/80 transition-colors duration-300 shadow-lg"
               >
-                Tu Reinvención
+                <ArrowRight className="h-4 w-4" />
+                Quiero el programa
+              </a>
+              <a
+                href="#programa"
+                className="inline-flex items-center justify-center px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-ink border border-ink/20 hover:border-terracotta hover:text-terracotta transition-colors duration-300"
+              >
+                Ver qué incluye
               </a>
             </div>
           </motion.div>
@@ -60,10 +69,9 @@ export default function Landing() {
           >
             <div className="relative w-full max-w-md">
               <img
-                src="https://picsum.photos/seed/woman-freedom-elegant/800/1000"
-                alt="Mujer madura sintiéndose libre y vibrante"
-                className="pill-image w-full shadow-2xl"
-                referrerPolicy="no-referrer"
+                src="/images/isabel.png"
+                alt="Isabel - Coach Ontológica Reinventadas 5.0"
+                className="pill-image w-full shadow-2xl object-cover object-top"
               />
 
               {/* Badge 1 - arriba a la derecha */}
@@ -210,6 +218,27 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* CTA BANNER URGENCIA */}
+      <section className="py-16 bg-terracotta">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div>
+            <p className="text-cream/80 text-sm uppercase tracking-widest mb-2">Plazas limitadas</p>
+            <h3 className="text-3xl md:text-4xl font-serif font-light text-cream">
+              ¿Estás lista para <span className="italic">reinventarte</span>?
+            </h3>
+          </div>
+          <a
+            href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-terracotta bg-cream hover:bg-sand transition-colors duration-300 shadow-xl"
+          >
+            <ArrowRight className="h-4 w-4" />
+            Reservar mi lugar
+          </a>
+        </div>
+      </section>
+
       {/* 3. THE PROGRAM (Oversized Typographic) */}
       <section id="programa" className="py-32 bg-sand/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -250,6 +279,20 @@ export default function Landing() {
               </motion.div>
             ))}
           </div>
+
+          {/* CTA dentro del programa */}
+          <div className="mt-16 text-center">
+            <p className="text-ink-light font-light mb-6">Todo esto en 8 sesiones personalizadas, 100% adaptadas a vos.</p>
+            <a
+              href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-ink hover:bg-terracotta transition-colors duration-300"
+            >
+              <ArrowRight className="h-4 w-4" />
+              Empezar mi transformación
+            </a>
+          </div>
         </div>
       </section>
 
@@ -286,6 +329,24 @@ export default function Landing() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* CTA después de About */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 border-t border-sand">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <p className="text-xl font-serif italic text-ink-light max-w-lg">
+              "Si yo pude reinventarme, vos también podés. Solo necesitás dar el primer paso."
+            </p>
+            <a
+              href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-terracotta hover:bg-terracotta/80 transition-colors duration-300 shadow-md"
+            >
+              <ArrowRight className="h-4 w-4" />
+              Dar el primer paso
+            </a>
           </div>
         </div>
       </section>
