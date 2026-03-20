@@ -88,7 +88,7 @@ export default function Landing() {
           >
             <div className="relative w-full max-w-md">
               <img
-                src="/images/isabel.png"
+                src="/IsabelFotoInicio.png"
                 alt="Isabel - Coach Ontológica Reinventadas 5.0"
                 className="pill-image w-full shadow-2xl object-cover object-top"
               />
