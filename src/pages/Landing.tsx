@@ -354,10 +354,9 @@ export default function Landing() {
             <div className="order-1 lg:order-2 relative">
               <div className="aspect-[3/4] rounded-[2rem] overflow-hidden">
                 <img
-                  src="https://picsum.photos/seed/isabel-portrait-elegant/800/1000"
+                  src="/FotoSobreMi.jpg"
                   alt="Isabel Martinez Campos"
                   className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
                 />
               </div>
             </div>
