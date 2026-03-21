@@ -2,6 +2,7 @@ import { ReactNode, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import FAQAssistant from './FAQAssistant';
 
 interface LayoutProps {
   children: ReactNode;
@@ -158,6 +159,9 @@ export default function Layout({ children }: LayoutProps) {
           </div>
         </div>
       </footer>
+
+      {/* FAQ Assistant Bubble */}
+      <FAQAssistant />
 
       {/* WhatsApp Floating Button */}
       <a
