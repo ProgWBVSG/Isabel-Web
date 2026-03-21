@@ -55,7 +55,7 @@ export default function Landing() {
             <span className="inline-block py-1.5 px-4 rounded-full border border-ink/10 text-ink text-xs font-medium mb-8 tracking-widest uppercase">
               Midlife Coaching
             </span>
-            <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-serif font-light text-ink leading-[0.9] mb-8 text-balance">
+            <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-serif font-light text-ink leading-[1.1] mb-8 text-balance">
               La segunda mitad de tu vida puede ser <span className="text-terracotta italic">la mejor</span>.
             </h1>
             <p className="text-lg md:text-xl text-ink-light mb-4 leading-relaxed max-w-lg font-light">
