@@ -26,8 +26,9 @@ export default function Layout({ children }: LayoutProps) {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: 'El Programa', path: '#programa' },
+    { name: 'El Proceso', path: '#programa' },
     { name: 'Sobre Mí', path: '#sobre-mi' },
+    { name: 'Talleres', path: '#comunidad' },
     { name: 'Testimonios', path: '#testimonios' },
   ];
 

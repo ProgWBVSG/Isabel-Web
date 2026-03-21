@@ -56,10 +56,14 @@ export default function Landing() {
               Midlife Coaching
             </span>
             <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-serif font-light text-ink leading-[0.9] mb-8 text-balance">
-              Es tu tiempo para <span className="text-terracotta italic">vibrar</span>.
+              La segunda mitad de tu vida puede ser <span className="text-terracotta italic">la mejor</span>.
             </h1>
-            <p className="text-lg md:text-xl text-ink-light mb-10 leading-relaxed max-w-lg font-light">
-              Reinventá tu vida a los 50 con propósito y autenticidad. Caminar hacia tu propósito es una decisión, no una edad.
+            <p className="text-lg md:text-xl text-ink-light mb-4 leading-relaxed max-w-lg font-light">
+              Por <span className="font-medium text-ink">Isabel Martínez de Campos</span><br />
+              <span className="text-sm tracking-widest uppercase text-terracotta">Midlife Coach</span>
+            </p>
+            <p className="text-lg text-ink-light mb-10 leading-relaxed max-w-lg font-light">
+              Si tienes más de 50 años y sientes que algo dentro tuyo está cambiando, no estás sola.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -211,7 +215,17 @@ export default function Landing() {
             ¿Sentís que viviste para otros y ahora <span className="italic text-terracotta">no sabés quién sos realmente?</span>
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left mt-20">
+          <div className="max-w-2xl mx-auto text-center mt-12 mb-20">
+            <h3 className="text-2xl font-serif text-cream/90 mb-6">La crisis de los +50 de la que casi nadie habla</h3>
+            <p className="text-lg font-light text-cream/70 leading-relaxed">
+              A partir de los 50 años pasan muchas cosas al mismo tiempo. Los hijos crecen y se van. Muchas parejas cambian o terminan. El trabajo deja de representar quién somos. El cuerpo cambia. La sociedad empieza a mirarnos de otra manera.
+            </p>
+            <p className="text-xl font-serif italic text-terracotta mt-8">
+              Y muchas mujeres sienten algo difícil de explicar: una mezcla de tristeza, miedo y vacío.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
             <div>
               <p className="text-xl font-serif italic text-cream/60 mb-4">Dejar atrás...</p>
               <ul className="space-y-6 font-light text-cream/80 text-lg">
@@ -276,23 +290,18 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="mb-20">
             <h2 className="text-5xl md:text-6xl font-serif font-light text-ink mb-6">
-              El Programa <span className="italic text-terracotta">Reinventadas 5.0</span>
+              El proceso <span className="italic text-terracotta">Reinventadas 5.0</span>
             </h2>
             <p className="text-xl text-ink-light font-light max-w-2xl">
-              Un viaje de transformación profunda estructurado en 8 sesiones personalizadas 1-a-1.
+              Acompaño a mujeres en un proceso de transformación personal enfocado en tres etapas.
             </p>
           </div>
 
           <div className="space-y-0">
             {[
-              { title: "Reconectar con tu esencia", desc: "Descubriremos dónde estás hoy y qué te apasiona." },
-              { title: "Identificar creencias", desc: "Desarmaremos los 'debería' y los miedos." },
-              { title: "Diseñar tu visión", desc: "Crearemos la imagen de la vida que deseas construir." },
-              { title: "Decisiones alineadas", desc: "Aprenderás a elegir desde tu autenticidad." },
-              { title: "Gestión emocional", desc: "Herramientas para transitar los cambios con serenidad." },
-              { title: "Plan de acción", desc: "Trazaremos los pasos concretos hacia tu visión." },
-              { title: "Superar obstáculos", desc: "Estrategias para mantenerte firme ante las dudas." },
-              { title: "Celebración y cierre", desc: "Revisión de tu transformación y herramientas futuras." }
+              { title: "Comprender la transición", desc: "Antes de reinventarnos necesitamos entender qué está pasando. Exploramos los cambios emocionales, las creencias limitantes y los roles que construyeron tu identidad." },
+              { title: "Reconectar con tus deseos", desc: "Reconectamos con deseos postergados, talentos olvidados e intereses propios. Aquí empieza a aparecer una nueva versión tuya." },
+              { title: "Crear tu próxima etapa", desc: "Trabajamos en nuevos proyectos personales, cambios laborales o creativos y nuevas formas de disfrutar la vida." }
             ].map((session, i) => (
               <motion.div
                 key={i}
@@ -334,20 +343,23 @@ export default function Landing() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1">
               <h2 className="text-5xl font-serif font-light text-ink mb-8">
-                Hola, soy <span className="italic text-terracotta">Isabel</span>
+                Soy <span className="italic text-terracotta">Isabel Martínez de Campos</span>
               </h2>
               <div className="space-y-6 text-lg text-ink-light font-light leading-relaxed">
-                <p>
-                  Mi propia reinvención comenzó cuando me di cuenta de que había vivido gran parte de mi vida cumpliendo expectativas ajenas. Llegué a los 50 sintiéndome desconectada de mi esencia, preguntándome: "¿Esto es todo?".
+                <p className="text-terracotta font-medium tracking-widest uppercase text-sm">
+                  Periodista • Emprendedora • Midlife Coach
                 </p>
                 <p>
-                  Ese cuestionamiento no fue una crisis, fue el inicio de mi transformación. Descubrí que la mediana edad es una oportunidad única para rediseñar nuestra vida desde la autenticidad.
+                  Y, sobre todo, una mujer que también atravesó esta etapa. Durante años trabajé sin parar, primero como periodista y luego como dueña de una agencia de contenidos. Mi vida era trabajo, clientes, plazos, noches sin dormir.
+                </p>
+                <p>
+                  Cuando cumplí 50 empecé a mirar a mi alrededor y descubrí algo que me impactó profundamente: muchas mujeres estaban atravesando lo mismo: depresión silenciosa, nido vacío, miedo al paso del tiempo y dificultad para reinventarse.
                 </p>
                 <p className="text-2xl font-serif italic text-ink my-8 border-l-2 border-terracotta pl-6">
-                  "Caminar hacia tu propósito es una decisión, no una edad."
+                  "Diez años luchando contra mis propios miedos... hasta que entendí que necesitamos espacios donde hablarlo, entenderlo y transformarlo."
                 </p>
                 <p>
-                  Como Coach Ontológica certificada, hoy acompaño a mujeres a reencontrarse consigo mismas. No te doy las respuestas, te acompaño a descubrirlas.
+                  Así nació Reinventadas 5.0. Una comunidad para mujeres que quieren vivir esta etapa con más conciencia, libertad y propósito. No te doy las respuestas, te acompaño a descubrirlas.
                 </p>
               </div>
             </div>
@@ -422,14 +434,56 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* 6. PRICING & CTA */}
+      {/* 6. TALLERES & COMUNIDAD */}
+      <section id="comunidad" className="py-32 bg-sand/30">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            <div>
+              <h2 className="text-4xl font-serif font-light text-ink mb-8">
+                Talleres para <span className="italic text-terracotta">mujeres 50+</span>
+              </h2>
+              <p className="text-lg text-ink-light font-light mb-8 leading-relaxed">
+                Organizao talleres grupales donde trabajamos los grandes temas de esta etapa: identity, propósito y volver a empezar. Una oportunidad para conectar con otras mujeres en procesos similares.
+              </p>
+              <div className="space-y-4">
+                <div className="flex gap-4 items-start">
+                  <CheckCircle2 className="h-6 w-6 text-terracotta shrink-0" />
+                  <p className="text-ink font-serif italic text-lg">Reinventarte después de los 45</p>
+                </div>
+                <div className="flex gap-4 items-start">
+                  <CheckCircle2 className="h-6 w-6 text-terracotta shrink-0" />
+                  <p className="text-ink font-serif italic text-lg">Encontrar propósito en la segunda mitad de la vida</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-ink text-cream p-12 rounded-[3rem] shadow-2xl">
+              <h2 className="text-4xl font-serif font-light mb-6">
+                Una comunidad <span className="italic text-terracotta">vibrante</span>
+              </h2>
+              <p className="text-cream/70 font-light mb-8 text-lg">
+                Hoy más de 25.000 mujeres forman parte de este espacio a través de Instagram. Compartimos reflexiones, conversaciones y experiencias para que ninguna mujer sienta que está atravesando esta transición sola.
+              </p>
+              <a
+                href="https://instagram.com/reinventadas5.0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-ink bg-cream hover:bg-sand transition-colors"
+              >
+                Sumarme en Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. PRICING & SESIONES 1:1 */}
       <section id="inversion" className="py-32 bg-cream">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <h2 className="text-5xl font-serif font-light text-ink mb-6">
-            Tu inversión en vivir con <span className="italic text-terracotta">propósito</span>
+            Sesiones de <span className="italic text-terracotta">acompañamiento 1:1</span>
           </h2>
           <p className="text-xl text-ink-light font-light mb-16">
-            8 sesiones personalizadas 1-a-1 + Materiales + Acceso de por vida.
+            Un espacio de conversación profunda para ayudarte a construir la próxima etapa de tu vida.
           </p>
 
           <div className="bg-white p-12 rounded-[3rem] border border-sand shadow-sm relative overflow-hidden">
@@ -474,10 +528,10 @@ export default function Landing() {
       <section className="py-32 bg-sand/50">
         <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
           <h2 className="text-4xl font-serif font-light text-ink mb-4">
-            ¿Aún no estás lista?
+            Tu reinvención puede empezar hoy
           </h2>
           <p className="text-lg text-ink-light font-light mb-12">
-            Descargá gratis la guía: <span className="italic font-medium">5 pasos para reconectar con tu propósito a los 50.</span>
+            La segunda mitad de la vida no es el final de la historia. Es el capítulo donde empezamos a vivir con más verdad, libertad y sentido.
           </p>
 
           {isSuccess ? (
