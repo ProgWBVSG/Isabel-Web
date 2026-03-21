@@ -443,7 +443,7 @@ export default function Landing() {
                 Talleres para <span className="italic text-terracotta">mujeres 50+</span>
               </h2>
               <p className="text-lg text-ink-light font-light mb-8 leading-relaxed">
-                Organizao talleres grupales donde trabajamos los grandes temas de esta etapa: identity, propósito y volver a empezar. Una oportunidad para conectar con otras mujeres en procesos similares.
+                Organizo talleres grupales donde trabajamos los grandes temas de esta etapa: identidad, propósito y volver a empezar. Una oportunidad para conectar con otras mujeres en procesos similares.
               </p>
               <div className="space-y-4">
                 <div className="flex gap-4 items-start">
@@ -485,6 +485,20 @@ export default function Landing() {
           <p className="text-xl text-ink-light font-light mb-16">
             Un espacio de conversación profunda para ayudarte a construir la próxima etapa de tu vida.
           </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto mb-16 px-6">
+            {[
+              "Crisis de los 50", "Búsqueda de propósito",
+              "Reinventarse profesionalmente", "Nido vacío",
+              "Separaciones", "Autoestima y cambios del cuerpo",
+              "Miedo al paso del tiempo", "Proyectos personales post 50"
+            ].map((topic, i) => (
+              <div key={i} className="flex items-center gap-2 text-ink-light font-light text-sm">
+                <CheckCircle2 className="h-4 w-4 text-terracotta" />
+                {topic}
+              </div>
+            ))}
+          </div>
 
           <div className="bg-white p-12 rounded-[3rem] border border-sand shadow-sm relative overflow-hidden">
             <div className="flex flex-col md:flex-row justify-center items-center gap-12 mb-12">
