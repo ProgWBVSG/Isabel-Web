@@ -62,8 +62,27 @@ export default function Landing() {
               Por <span className="font-medium text-ink">Isabel Martínez de Campos</span><br />
               <span className="text-sm tracking-widest uppercase text-terracotta">Midlife Coach</span>
             </p>
-            <p className="text-lg text-ink-light mb-10 leading-relaxed max-w-lg font-light">
+            <p className="text-lg text-ink-light mb-6 leading-relaxed max-w-lg font-light">
               Si tienes más de 50 años y sientes que algo dentro tuyo está cambiando, no estás sola.
+            </p>
+            <p className="text-lg text-ink-light mb-4 leading-relaxed max-w-lg font-light">
+              Muchas mujeres llegan a esta etapa con preguntas profundas:
+            </p>
+            <ul className="text-lg text-ink-light mb-6 leading-relaxed max-w-lg font-light space-y-1 list-none">
+              <li className="font-serif italic">¿Quién soy ahora?</li>
+              <li className="font-serif italic">¿Qué quiero hacer con los próximos años de mi vida?</li>
+              <li className="font-serif italic">¿Todavía estoy a tiempo de reinventarme?</li>
+            </ul>
+            <p className="text-lg text-ink-light mb-4 leading-relaxed max-w-lg font-light">
+              Durante décadas fuimos madres, profesionales, parejas, cuidadoras, sostén de muchos.
+              Pero llega un momento en el que algo adentro empieza a decir:
+            </p>
+            <p className="text-xl font-serif italic text-terracotta mb-6 max-w-lg">
+              "Ahora me toca a mí".
+            </p>
+            <p className="text-lg text-ink-light mb-10 leading-relaxed max-w-lg font-light">
+              Reinventadas 5.0 nace para acompañar a mujeres que están atravesando esta transición.
+              Mujeres que sienten que la segunda mitad de su vida puede ser también el comienzo de algo nuevo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -212,54 +231,41 @@ export default function Landing() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-tight text-balance mb-12"
           >
-            ¿Sentís que viviste para otros y ahora <span className="italic text-terracotta">no sabés quién sos realmente?</span>
+            La crisis de los +50 de la que <span className="italic text-terracotta">casi nadie habla</span>
           </motion.h2>
 
-          <div className="max-w-2xl mx-auto text-center mt-12 mb-20">
-            <h3 className="text-2xl font-serif text-cream/90 mb-6">La crisis de los +50 de la que casi nadie habla</h3>
-            <p className="text-lg font-light text-cream/70 leading-relaxed">
-              A partir de los 50 años pasan muchas cosas al mismo tiempo. Los hijos crecen y se van. Muchas parejas cambian o terminan. El trabajo deja de representar quién somos. El cuerpo cambia. La sociedad empieza a mirarnos de otra manera.
+          <div className="max-w-2xl mx-auto text-center mt-12 mb-16">
+            <p className="text-lg font-light text-cream/80 leading-relaxed mb-8">
+              A partir de los 50 años pasan muchas cosas al mismo tiempo.
             </p>
-            <p className="text-xl font-serif italic text-terracotta mt-8">
-              Y muchas mujeres sienten algo difícil de explicar: una mezcla de tristeza, miedo y vacío.
+            <ul className="space-y-4 font-light text-cream/80 text-lg text-left max-w-lg mx-auto mb-10">
+              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>Los hijos crecen y se van.</li>
+              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>Muchas parejas cambian o terminan.</li>
+              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>El trabajo deja de representar quién somos.</li>
+              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>El cuerpo cambia.</li>
+              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>La sociedad empieza a mirarnos de otra manera.</li>
+            </ul>
+            <p className="text-lg font-light text-cream/80 leading-relaxed mb-6">
+              Y muchas mujeres sienten algo difícil de explicar:
             </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
-            <div>
-              <p className="text-xl font-serif italic text-cream/60 mb-4">Dejar atrás...</p>
-              <ul className="space-y-6 font-light text-cream/80 text-lg">
-                <li className="flex gap-4 border-t border-cream/10 pt-4">
-                  <span className="text-terracotta">—</span>
-                  La sensación de estar perdida o invisible.
-                </li>
-                <li className="flex gap-4 border-t border-cream/10 pt-4">
-                  <span className="text-terracotta">—</span>
-                  El miedo a que "ya es tarde" para cambiar.
-                </li>
-                <li className="flex gap-4 border-t border-cream/10 pt-4">
-                  <span className="text-terracotta">—</span>
-                  Vivir en automático, desconectada de tus deseos.
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="text-xl font-serif italic text-cream/60 mb-4">Para empezar a...</p>
-              <ul className="space-y-6 font-light text-cream/80 text-lg">
-                <li className="flex gap-4 border-t border-cream/10 pt-4">
-                  <span className="text-olive">—</span>
-                  Despertar con claridad sobre lo que querés.
-                </li>
-                <li className="flex gap-4 border-t border-cream/10 pt-4">
-                  <span className="text-olive">—</span>
-                  Tomar decisiones alineadas con tus deseos.
-                </li>
-                <li className="flex gap-4 border-t border-cream/10 pt-4">
-                  <span className="text-olive">—</span>
-                  Sentirte vibrante, con propósito y autenticidad.
-                </li>
-              </ul>
-            </div>
+            <p className="text-xl font-serif italic text-terracotta mb-8">
+              una mezcla de tristeza, miedo y vacío.
+            </p>
+            <p className="text-lg font-light text-cream/80 leading-relaxed mb-4">
+              No porque su vida haya sido mala.
+            </p>
+            <p className="text-lg font-light text-cream/80 leading-relaxed mb-8">
+              Sino porque aparece una pregunta que antes no estaba:
+            </p>
+            <p className="text-2xl font-serif italic text-terracotta mb-10">
+              ¿Quién soy ahora?
+            </p>
+            <p className="text-lg font-light text-cream/80 leading-relaxed mb-4">
+              Esta etapa es una transición profunda.
+            </p>
+            <p className="text-xl font-serif italic text-cream/90">
+              Y puede convertirse en el comienzo de una vida más auténtica.
+            </p>
           </div>
         </div>
       </section>
@@ -299,23 +305,46 @@ export default function Landing() {
 
           <div className="space-y-0">
             {[
-              { title: "Comprender la transición", desc: "Antes de reinventarnos necesitamos entender qué está pasando. Exploramos los cambios emocionales, las creencias limitantes y los roles que construyeron tu identidad." },
-              { title: "Reconectar con tus deseos", desc: "Reconectamos con deseos postergados, talentos olvidados e intereses propios. Aquí empieza a aparecer una nueva versión tuya." },
-              { title: "Crear tu próxima etapa", desc: "Trabajamos en nuevos proyectos personales, cambios laborales o creativos y nuevas formas de disfrutar la vida." }
+              {
+                title: "Comprender la transición",
+                intro: "Antes de reinventarnos necesitamos entender qué está pasando.",
+                items: ["Los cambios emocionales de esta etapa", "Las creencias que nos limitan.", "Los roles que construyeron nuestra identidad."],
+                closing: "Este paso trae algo muy importante: claridad."
+              },
+              {
+                title: "Reconectar con tus deseos",
+                intro: "Durante muchos años muchas mujeres viven para otros. En esta etapa comenzamos a reconectar con:",
+                items: ["Deseos postergados.", "Talentos olvidados.", "Intereses propios.", "Valores profundos."],
+                closing: "Aquí empieza a aparecer una nueva versión tuya."
+              },
+              {
+                title: "Crear tu próxima etapa",
+                intro: "La reinvención no es solo interna. También implica acción. En esta etapa trabajamos en:",
+                items: ["Nuevos proyectos personales.", "Cambios laborales o creativos.", "Nuevas formas de vivir y disfrutar la vida."],
+                closing: "No se trata de empezar de cero. Se trata de construir desde todo lo que ya eres."
+              }
             ].map((session, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                className="group relative flex flex-col md:flex-row md:items-center gap-6 md:gap-12 py-10 border-b border-ink/10 hover:bg-white/50 transition-colors px-4 -mx-4 rounded-2xl"
+                className="group relative flex flex-col md:flex-row md:items-start gap-6 md:gap-12 py-10 border-b border-ink/10 hover:bg-white/50 transition-colors px-4 -mx-4 rounded-2xl"
               >
-                <div className="font-serif text-6xl md:text-7xl font-light text-terracotta/30 group-hover:text-terracotta transition-colors">
+                <div className="font-serif text-6xl md:text-7xl font-light text-terracotta/30 group-hover:text-terracotta transition-colors shrink-0">
                   0{i + 1}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-serif text-ink mb-2">{session.title}</h3>
-                  <p className="text-ink-light font-light">{session.desc}</p>
+                  <h3 className="text-2xl font-serif text-ink mb-3">{session.title}</h3>
+                  <p className="text-ink-light font-light mb-3">{session.intro}</p>
+                  <ul className="space-y-1 mb-4">
+                    {session.items.map((item, j) => (
+                      <li key={j} className="flex gap-3 text-ink-light font-light">
+                        <span className="text-terracotta">—</span>{item}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-ink font-serif italic">{session.closing}</p>
                 </div>
               </motion.div>
             ))}
@@ -323,7 +352,6 @@ export default function Landing() {
 
           {/* CTA dentro del programa */}
           <div className="mt-16 text-center">
-            <p className="text-ink-light font-light mb-6">Todo esto en 8 sesiones personalizadas, 100% adaptadas a vos.</p>
             <a
               href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
               target="_blank"
@@ -350,16 +378,58 @@ export default function Landing() {
                   Periodista • Emprendedora • Midlife Coach
                 </p>
                 <p>
-                  Y, sobre todo, una mujer que también atravesó esta etapa. Durante años trabajé sin parar, primero como periodista y luego como dueña de una agencia de contenidos. Mi vida era trabajo, clientes, plazos, noches sin dormir.
+                  Y, sobre todo, una mujer que también atravesó esta etapa.
                 </p>
                 <p>
-                  Cuando cumplí 50 empecé a mirar a mi alrededor y descubrí algo que me impactó profundamente: muchas mujeres estaban atravesando lo mismo: depresión silenciosa, nido vacío, miedo al paso del tiempo y dificultad para reinventarse.
+                  Durante años trabajé sin parar. Primero como periodista y luego como dueña de una agencia de contenidos.
+                </p>
+                <p>
+                  Mi vida era trabajo. Clientes. Plazos. Noches sin dormir.
+                </p>
+                <p>
+                  Muchas veces me preguntaba: ¿Por qué sigo haciendo esto?
+                </p>
+                <p>
+                  La respuesta era clara: sostener a mi familia, darles a mis hijos una buena vida.
+                </p>
+                <p className="text-xl font-serif italic text-terracotta">
+                  Pero dentro mío empezó a crecer otra pregunta: ¿Esto es todo?
+                </p>
+                <p>
+                  Cuando cumplí 50 empecé a mirar a mi alrededor y descubrí algo que me impactó profundamente.
+                </p>
+                <p>
+                  Muchas mujeres estaban atravesando lo mismo:
+                </p>
+                <ul className="space-y-2 pl-2">
+                  <li className="flex gap-3"><span className="text-terracotta">—</span>depresión silenciosa,</li>
+                  <li className="flex gap-3"><span className="text-terracotta">—</span>separaciones.</li>
+                  <li className="flex gap-3"><span className="text-terracotta">—</span>nido vacío.</li>
+                  <li className="flex gap-3"><span className="text-terracotta">—</span>miedo al paso del tiempo.</li>
+                  <li className="flex gap-3"><span className="text-terracotta">—</span>dificultad para reinventarse laboralmente.</li>
+                  <li className="flex gap-3"><span className="text-terracotta">—</span>sueños postergados.</li>
+                </ul>
+                <p>
+                  Y algo aún más profundo: la sensación de volverse invisibles en una sociedad que idolatra la juventud.
+                </p>
+                <p>
+                  Fue entonces cuando decidí estudiar coaching.
+                </p>
+                <p>
+                  No fue una solución mágica, pero me dio herramientas para comprender algo muy importante:
+                  la mitad de la vida puede ser un momento de transformación.
                 </p>
                 <p className="text-2xl font-serif italic text-ink my-8 border-l-2 border-terracotta pl-6">
-                  "Diez años luchando contra mis propios miedos... hasta que entendí que necesitamos espacios donde hablarlo, entenderlo y transformarlo."
+                  Sin embargo, me llevó diez años animarme a crear este proyecto. Diez años luchando contra mis propios miedos, la procrastinación y esa voz interna que decía que ya era tarde.
                 </p>
                 <p>
-                  Así nació Reinventadas 5.0. Una comunidad para mujeres que quieren vivir esta etapa con más conciencia, libertad y propósito. No te doy las respuestas, te acompaño a descubrirlas.
+                  Hasta que entendí algo:
+                </p>
+                <p className="text-xl font-serif italic text-terracotta">
+                  si tantas mujeres están pasando por esto, necesitamos espacios donde hablarlo, entenderlo y transformarlo.
+                </p>
+                <p>
+                  Así nació Reinventadas 5.0. Una comunidad para mujeres que quieren vivir esta etapa con más conciencia, libertad y propósito.
                 </p>
               </div>
             </div>
@@ -443,25 +513,60 @@ export default function Landing() {
                 Talleres para <span className="italic text-terracotta">mujeres 50+</span>
               </h2>
               <p className="text-lg text-ink-light font-light mb-8 leading-relaxed">
-                Organizo talleres grupales donde trabajamos los grandes temas de esta etapa: identidad, propósito y volver a empezar. Una oportunidad para conectar con otras mujeres en procesos similares.
+                Además de las sesiones individuales, organizo talleres grupales donde trabajamos los grandes temas de esta etapa de la vida.
               </p>
-              <div className="space-y-4">
+              <p className="text-ink-light font-light mb-6">Algunos de los talleres incluyen:</p>
+              <div className="space-y-6">
                 <div className="flex gap-4 items-start">
-                  <CheckCircle2 className="h-6 w-6 text-terracotta shrink-0" />
-                  <p className="text-ink font-serif italic text-lg">Reinventarte después de los 45</p>
+                  <CheckCircle2 className="h-6 w-6 text-terracotta shrink-0 mt-1" />
+                  <div>
+                    <p className="text-ink font-serif italic text-lg">Reinventarte después de los 45</p>
+                    <p className="text-ink-light font-light text-sm mt-1">Un espacio para repensar tu identidad, tus deseos y tu próxima etapa.</p>
+                  </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <CheckCircle2 className="h-6 w-6 text-terracotta shrink-0" />
-                  <p className="text-ink font-serif italic text-lg">Encontrar propósito en la segunda mitad de la vida</p>
+                  <CheckCircle2 className="h-6 w-6 text-terracotta shrink-0 mt-1" />
+                  <div>
+                    <p className="text-ink font-serif italic text-lg">Encontrar propósito en la segunda mitad de la vida</p>
+                    <p className="text-ink-light font-light text-sm mt-1">Exploramos qué significa vivir con más sentido después de los 50.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4 items-start">
+                  <CheckCircle2 className="h-6 w-6 text-terracotta shrink-0 mt-1" />
+                  <div>
+                    <p className="text-ink font-serif italic text-lg">Volver a empezar.</p>
+                  </div>
                 </div>
               </div>
+              <p className="text-ink-light font-light mt-8 leading-relaxed">
+                Son espacios para atravesar este cambio con más conciencia y nuevas posibilidades.
+                Los talleres también son una oportunidad para conectar con otras mujeres que están viviendo procesos similares.
+              </p>
             </div>
             <div className="bg-ink text-cream p-12 rounded-[3rem] shadow-2xl">
               <h2 className="text-4xl font-serif font-light mb-6">
-                Una comunidad <span className="italic text-terracotta">vibrante</span>
+                Una comunidad de mujeres <span className="italic text-terracotta">reinventándose</span>
               </h2>
-              <p className="text-cream/70 font-light mb-8 text-lg">
-                Hoy más de 25.000 mujeres forman parte de este espacio a través de Instagram. Compartimos reflexiones, conversaciones y experiencias para que ninguna mujer sienta que está atravesando esta transición sola.
+              <p className="text-cream/80 font-light mb-6 text-lg leading-relaxed">
+                Reinventadas 5.0 también es una comunidad.
+              </p>
+              <p className="text-cream/70 font-light mb-6 text-lg leading-relaxed">
+                Hoy más de 25.000 mujeres forman parte de este espacio a través de Instagram, donde compartimos reflexiones, conversaciones y experiencias sobre esta etapa de la vida.
+              </p>
+              <p className="text-cream/80 font-light mb-4 text-lg">
+                El objetivo es simple:
+              </p>
+              <p className="font-serif italic text-terracotta text-xl mb-8">
+                que ninguna mujer sienta que está atravesando esta transición sola.
+              </p>
+              <p className="text-cream/70 font-light mb-4">
+                Aquí hablamos de temas que muchas veces quedan silenciados:
+              </p>
+              <p className="text-cream/80 font-light mb-8">
+                Edadismo, menopausia, reinventarse profesionalmente, nuevos comienzos, la libertad de esta etapa.
+              </p>
+              <p className="font-serif italic text-cream/90 mb-8">
+                Porque la segunda mitad de la vida no tiene por qué ser un declive. Puede ser un despertar.
               </p>
               <a
                 href="https://instagram.com/reinventadas5.0"
@@ -476,22 +581,25 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* 7. PRICING & SESIONES 1:1 */}
+      {/* 7. SESIONES 1:1 */}
       <section id="inversion" className="py-32 bg-cream">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <h2 className="text-5xl font-serif font-light text-ink mb-6">
             Sesiones de <span className="italic text-terracotta">acompañamiento 1:1</span>
           </h2>
-          <p className="text-xl text-ink-light font-light mb-16">
-            Un espacio de conversación profunda para ayudarte a construir la próxima etapa de tu vida.
+          <p className="text-xl text-ink-light font-light mb-8 leading-relaxed max-w-2xl mx-auto">
+            Las sesiones individuales están pensadas para mujeres que sienten que están atravesando una transición profunda y quieren un espacio de acompañamiento personal.
+          </p>
+          <p className="text-lg text-ink-light font-light mb-10">
+            En las sesiones trabajamos temas como:
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto mb-16 px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto mb-10 px-6">
             {[
-              "Crisis de los 50", "Búsqueda de propósito",
+              "Crisis de los 50", "Búsqueda de propósito.",
               "Reinventarse profesionalmente", "Nido vacío",
-              "Separaciones", "Autoestima y cambios del cuerpo",
-              "Miedo al paso del tiempo", "Proyectos personales post 50"
+              "Separaciones.", "Autoestima y cambios del cuerpo.",
+              "Miedo al paso del tiempo.", "Proyectos personales post 50."
             ].map((topic, i) => (
               <div key={i} className="flex items-center gap-2 text-ink-light font-light text-sm">
                 <CheckCircle2 className="h-4 w-4 text-terracotta" />
@@ -500,52 +608,43 @@ export default function Landing() {
             ))}
           </div>
 
-          <div className="bg-white p-12 rounded-[3rem] border border-sand shadow-sm relative overflow-hidden">
-            <div className="flex flex-col md:flex-row justify-center items-center gap-12 mb-12">
-              <div className="text-center">
-                <p className="text-sm text-ink-light uppercase tracking-widest mb-4">Argentina</p>
-                <p className="text-6xl font-serif text-ink mb-2">$400k <span className="text-2xl text-ink-light">ARS</span></p>
-                <p className="text-sm text-ink-light">($50.000 por sesión)</p>
-              </div>
-              <div className="hidden md:block w-px h-24 bg-sand"></div>
-              <div className="md:hidden h-px w-24 bg-sand"></div>
-              <div className="text-center">
-                <p className="text-sm text-ink-light uppercase tracking-widest mb-4">Exterior</p>
-                <p className="text-6xl font-serif text-ink mb-2">$384 <span className="text-2xl text-ink-light">USD</span></p>
-                <p className="text-sm text-ink-light">($48 por sesión)</p>
-              </div>
-            </div>
-
-            <div className="bg-sand/30 rounded-2xl p-6 mb-12 inline-block text-left max-w-md mx-auto">
-              <p className="font-medium text-ink mb-2 text-center">Garantía de satisfacción 100%</p>
-              <p className="text-sm text-ink-light font-light text-center">
-                Si después de la primera sesión sentís que no es para vos, te devuelvo el 100% de tu inversión.
-              </p>
-            </div>
-
-            <div>
-              <a
-                href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-12 py-5 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-ink hover:bg-terracotta transition-colors duration-300 w-full sm:w-auto"
-              >
-                Comprar programa ahora
-              </a>
-              <p className="text-xs text-ink-light mt-6 uppercase tracking-widest">Pago seguro procesado por TiendaUp</p>
-            </div>
+          <div className="bg-sand/30 rounded-2xl p-6 mb-10 max-w-md mx-auto text-left">
+            <p className="font-medium text-ink mb-1">Formato</p>
+            <p className="text-ink-light font-light">Sesiones online</p>
+            <p className="font-medium text-ink mt-4 mb-1">Duración</p>
+            <p className="text-ink-light font-light">60 minutos</p>
           </div>
+
+          <p className="text-lg text-ink-light font-light mb-10 max-w-2xl mx-auto leading-relaxed">
+            Este es un espacio de conversación profunda, reflexión y claridad para ayudarte a construir la próxima etapa de tu vida.
+          </p>
+
+          <a
+            href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-12 py-5 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-ink hover:bg-terracotta transition-colors duration-300"
+          >
+            Reservar mi sesión
+          </a>
         </div>
       </section>
 
-      {/* 7. LEAD MAGNET (Soft Footer) */}
+      {/* 8. CIERRE / CALL TO ACTION */}
       <section className="py-32 bg-sand/50">
         <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
           <h2 className="text-4xl font-serif font-light text-ink mb-4">
             Tu reinvención puede empezar hoy
           </h2>
-          <p className="text-lg text-ink-light font-light mb-12">
-            La segunda mitad de la vida no es el final de la historia. Es el capítulo donde empezamos a vivir con más verdad, libertad y sentido.
+          <p className="text-lg text-ink-light font-light mb-6 leading-relaxed">
+            Si sientes que estás atravesando un momento de cambio y quieres acompañamiento en este proceso, puedes comenzar de dos maneras:
+          </p>
+          <p className="text-xl font-serif italic text-terracotta mb-4">Reservando una sesión individual</p>
+          <p className="text-lg text-ink-light font-light mb-4">o</p>
+          <p className="text-xl font-serif italic text-terracotta mb-10">Participando en alguno de los talleres de Reinventadas 5.0.</p>
+          <p className="text-lg text-ink-light font-light mb-12 leading-relaxed">
+            La segunda mitad de la vida no es el final de la historia.
+            Muchas veces es el capítulo donde empezamos a vivir con más verdad, más libertad y más sentido.
           </p>
 
           {isSuccess ? (
