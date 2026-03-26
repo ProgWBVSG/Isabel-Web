@@ -62,27 +62,8 @@ export default function Landing() {
               Por <span className="font-medium text-ink">Isabel Martínez de Campos</span><br />
               <span className="text-sm tracking-widest uppercase text-terracotta">Midlife Coach</span>
             </p>
-            <p className="text-lg text-ink-light mb-6 leading-relaxed max-w-lg font-light">
-              Si tienes más de 50 años y sientes que algo dentro tuyo está cambiando, no estás sola.
-            </p>
-            <p className="text-lg text-ink-light mb-4 leading-relaxed max-w-lg font-light">
-              Muchas mujeres llegan a esta etapa con preguntas profundas:
-            </p>
-            <ul className="text-lg text-ink-light mb-6 leading-relaxed max-w-lg font-light space-y-1 list-none">
-              <li className="font-serif italic">¿Quién soy ahora?</li>
-              <li className="font-serif italic">¿Qué quiero hacer con los próximos años de mi vida?</li>
-              <li className="font-serif italic">¿Todavía estoy a tiempo de reinventarme?</li>
-            </ul>
-            <p className="text-lg text-ink-light mb-4 leading-relaxed max-w-lg font-light">
-              Durante décadas fuimos madres, profesionales, parejas, cuidadoras, sostén de muchos.
-              Pero llega un momento en el que algo adentro empieza a decir:
-            </p>
-            <p className="text-xl font-serif italic text-terracotta mb-6 max-w-lg">
-              "Ahora me toca a mí".
-            </p>
             <p className="text-lg text-ink-light mb-10 leading-relaxed max-w-lg font-light">
-              Reinventadas 5.0 nace para acompañar a mujeres que están atravesando esta transición.
-              Mujeres que sienten que la segunda mitad de su vida puede ser también el comienzo de algo nuevo.
+              Si tienes más de 50 años y sientes que algo dentro tuyo está cambiando, no estás sola.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -217,6 +198,39 @@ export default function Landing() {
                 </p>
               </motion.div>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 1b. INTRO / TRANSICIÓN */}
+      <section className="py-20 bg-cream">
+        <div className="max-w-3xl mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6 text-lg text-ink-light font-light leading-relaxed"
+          >
+            <p>
+              Muchas mujeres llegan a esta etapa con preguntas profundas:
+            </p>
+            <ul className="list-none space-y-2 pl-0">
+              <li className="font-serif italic text-xl text-ink">¿Quién soy ahora?</li>
+              <li className="font-serif italic text-xl text-ink">¿Qué quiero hacer con los próximos años de mi vida?</li>
+              <li className="font-serif italic text-xl text-ink">¿Todavía estoy a tiempo de reinventarme?</li>
+            </ul>
+            <p>
+              Durante décadas fuimos madres, profesionales, parejas, cuidadoras, sostén de muchos.
+              Pero llega un momento en el que algo adentro empieza a decir:
+            </p>
+            <p className="text-2xl font-serif italic text-terracotta">
+              "Ahora me toca a mí".
+            </p>
+            <p>
+              Reinventadas 5.0 nace para acompañar a mujeres que están atravesando esta transición.
+              Mujeres que sienten que la segunda mitad de su vida puede ser también el comienzo de algo nuevo.
+            </p>
           </motion.div>
         </div>
       </section>
