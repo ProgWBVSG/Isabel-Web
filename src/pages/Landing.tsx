@@ -206,31 +206,31 @@ export default function Landing() {
       <section className="py-20 bg-cream">
         <div className="max-w-3xl mx-auto px-6 lg:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
             className="space-y-6 text-lg text-ink-light font-light leading-relaxed"
           >
-            <p>
+            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }}>
               Muchas mujeres llegan a esta etapa con preguntas profundas:
-            </p>
-            <ul className="list-none space-y-2 pl-0">
+            </motion.p>
+            <motion.ul variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} className="list-none space-y-2 pl-0">
               <li className="font-serif italic text-xl text-ink">¿Quién soy ahora?</li>
               <li className="font-serif italic text-xl text-ink">¿Qué quiero hacer con los próximos años de mi vida?</li>
               <li className="font-serif italic text-xl text-ink">¿Todavía estoy a tiempo de reinventarme?</li>
-            </ul>
-            <p>
+            </motion.ul>
+            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }}>
               Durante décadas fuimos madres, profesionales, parejas, cuidadoras, sostén de muchos.
               Pero llega un momento en el que algo adentro empieza a decir:
-            </p>
-            <p className="text-2xl font-serif italic text-terracotta">
+            </motion.p>
+            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} className="text-2xl font-serif italic text-terracotta">
               "Ahora me toca a mí".
-            </p>
-            <p>
+            </motion.p>
+            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }}>
               Reinventadas 5.0 nace para acompañar a mujeres que están atravesando esta transición.
               Mujeres que sienten que la segunda mitad de su vida puede ser también el comienzo de algo nuevo.
-            </p>
+            </motion.p>
           </motion.div>
         </div>
       </section>
@@ -248,45 +248,57 @@ export default function Landing() {
             La crisis de los +50 de la que <span className="italic text-terracotta">casi nadie habla</span>
           </motion.h2>
 
-          <div className="max-w-2xl mx-auto text-center mt-12 mb-16">
-            <p className="text-lg font-light text-cream/80 leading-relaxed mb-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
+            className="max-w-2xl mx-auto text-center mt-12 mb-16"
+          >
+            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg font-light text-cream/80 leading-relaxed mb-8">
               A partir de los 50 años pasan muchas cosas al mismo tiempo.
-            </p>
-            <ul className="space-y-4 font-light text-cream/80 text-lg text-left max-w-lg mx-auto mb-10">
+            </motion.p>
+            <motion.ul variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="space-y-4 font-light text-cream/80 text-lg text-left max-w-lg mx-auto mb-10">
               <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>Los hijos crecen y se van.</li>
               <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>Muchas parejas cambian o terminan.</li>
               <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>El trabajo deja de representar quién somos.</li>
               <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>El cuerpo cambia.</li>
               <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>La sociedad empieza a mirarnos de otra manera.</li>
-            </ul>
-            <p className="text-lg font-light text-cream/80 leading-relaxed mb-6">
+            </motion.ul>
+            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg font-light text-cream/80 leading-relaxed mb-6">
               Y muchas mujeres sienten algo difícil de explicar:
-            </p>
-            <p className="text-xl font-serif italic text-terracotta mb-8">
+            </motion.p>
+            <motion.p variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} className="text-xl font-serif italic text-terracotta mb-8">
               una mezcla de tristeza, miedo y vacío.
-            </p>
-            <p className="text-lg font-light text-cream/80 leading-relaxed mb-4">
+            </motion.p>
+            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg font-light text-cream/80 leading-relaxed mb-4">
               No porque su vida haya sido mala.
-            </p>
-            <p className="text-lg font-light text-cream/80 leading-relaxed mb-8">
+            </motion.p>
+            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg font-light text-cream/80 leading-relaxed mb-8">
               Sino porque aparece una pregunta que antes no estaba:
-            </p>
-            <p className="text-2xl font-serif italic text-terracotta mb-10">
+            </motion.p>
+            <motion.p variants={{ hidden: { opacity: 0, y: 30, scale: 0.95 }, visible: { opacity: 1, y: 0, scale: 1 } }} transition={{ duration: 0.7 }} className="text-2xl font-serif italic text-terracotta mb-10">
               ¿Quién soy ahora?
-            </p>
-            <p className="text-lg font-light text-cream/80 leading-relaxed mb-4">
+            </motion.p>
+            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg font-light text-cream/80 leading-relaxed mb-4">
               Esta etapa es una transición profunda.
-            </p>
-            <p className="text-xl font-serif italic text-cream/90">
+            </motion.p>
+            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} className="text-xl font-serif italic text-cream/90">
               Y puede convertirse en el comienzo de una vida más auténtica.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA BANNER URGENCIA */}
       <section className="py-16 bg-terracotta">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8"
+        >
           <div>
             <p className="text-cream/80 text-sm uppercase tracking-widest mb-2">Plazas limitadas</p>
             <h3 className="text-3xl md:text-4xl font-serif font-light text-cream">
@@ -302,20 +314,26 @@ export default function Landing() {
             <ArrowRight className="h-4 w-4" />
             Reservar mi lugar
           </a>
-        </div>
+        </motion.div>
       </section>
 
       {/* 3. THE PROGRAM (Oversized Typographic) */}
       <section id="programa" className="py-32 bg-sand/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="mb-20"
+          >
             <h2 className="text-5xl md:text-6xl font-serif font-light text-ink mb-6">
               El proceso <span className="italic text-terracotta">Reinventadas 5.0</span>
             </h2>
             <p className="text-xl text-ink-light font-light max-w-2xl">
               Acompaño a mujeres en un proceso de transformación personal enfocado en tres etapas.
             </p>
-          </div>
+          </motion.div>
 
           <div className="space-y-0">
             {[
@@ -340,9 +358,10 @@ export default function Landing() {
             ].map((session, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
                 className="group relative flex flex-col md:flex-row md:items-start gap-6 md:gap-12 py-10 border-b border-ink/10 hover:bg-white/50 transition-colors px-4 -mx-4 rounded-2xl"
               >
                 <div className="font-serif text-6xl md:text-7xl font-light text-terracotta/30 group-hover:text-terracotta transition-colors shrink-0">
@@ -365,7 +384,13 @@ export default function Landing() {
           </div>
 
           {/* CTA dentro del programa */}
-          <div className="mt-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-16 text-center"
+          >
             <a
               href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
               target="_blank"
@@ -375,15 +400,21 @@ export default function Landing() {
               <ArrowRight className="h-4 w-4" />
               Empezar mi transformación
             </a>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* 4. ABOUT ISABEL (Split Layout) */}
       <section id="sobre-mi" className="py-32 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="order-2 lg:order-1">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
+          >
+            <motion.div variants={{ hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.7 }} className="order-2 lg:order-1">
               <h2 className="text-5xl font-serif font-light text-ink mb-8">
                 Soy <span className="italic text-terracotta">Isabel Martínez de Campos</span>
               </h2>
@@ -446,8 +477,8 @@ export default function Landing() {
                   Así nació Reinventadas 5.0. Una comunidad para mujeres que quieren vivir esta etapa con más conciencia, libertad y propósito.
                 </p>
               </div>
-            </div>
-            <div className="order-1 lg:order-2 relative">
+            </motion.div>
+            <motion.div variants={{ hidden: { opacity: 0, x: 40 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.7 }} className="order-1 lg:order-2 relative">
               <div className="aspect-[3/4] rounded-[2rem] overflow-hidden">
                 <img
                   src="/images/FotoSobreMi.jpg"
@@ -455,12 +486,18 @@ export default function Landing() {
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* CTA después de About */}
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 border-t border-sand">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-7xl mx-auto px-6 lg:px-12 py-12 border-t border-sand"
+        >
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-xl font-serif italic text-ink-light max-w-lg">
               "Si yo pude reinventarme, vos también podés. Solo necesitás dar el primer paso."
@@ -475,16 +512,22 @@ export default function Landing() {
               Dar el primer paso
             </a>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* 5. TESTIMONIALS (Warm Organic) */}
       <section id="testimonios" className="py-32 bg-olive text-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-20"
+          >
             <h2 className="text-5xl font-serif font-light mb-6">Historias Reales</h2>
             <p className="text-xl font-light text-cream/70">Mujeres que ya están vibrando.</p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {[
@@ -499,7 +542,7 @@ export default function Landing() {
                 img: "https://picsum.photos/seed/silvia-elegant/200/200"
               }
             ].map((t, i) => (
-              <div key={i} className="bg-white/5 p-10 rounded-[2rem] border border-white/10 backdrop-blur-sm">
+              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.2 }} className="bg-white/5 p-10 rounded-[2rem] border border-white/10 backdrop-blur-sm">
                 <div className="flex items-center gap-6 mb-8">
                   <img src={t.img} alt={t.name} className="w-20 h-20 rounded-full object-cover" referrerPolicy="no-referrer" />
                   <div>
@@ -512,7 +555,7 @@ export default function Landing() {
                   </div>
                 </div>
                 <p className="font-light text-lg leading-relaxed text-cream/90 italic">"{t.quote}"</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -521,8 +564,14 @@ export default function Landing() {
       {/* 6. TALLERES & COMUNIDAD */}
       <section id="comunidad" className="py-32 bg-sand/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            <div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-20"
+          >
+            <motion.div variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.7 }}>
               <h2 className="text-4xl font-serif font-light text-ink mb-8">
                 Talleres para <span className="italic text-terracotta">mujeres 50+</span>
               </h2>
@@ -556,8 +605,8 @@ export default function Landing() {
                 Son espacios para atravesar este cambio con más conciencia y nuevas posibilidades.
                 Los talleres también son una oportunidad para conectar con otras mujeres que están viviendo procesos similares.
               </p>
-            </div>
-            <div className="bg-ink text-cream p-12 rounded-[3rem] shadow-2xl">
+            </motion.div>
+            <motion.div variants={{ hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.7 }} className="bg-ink text-cream p-12 rounded-[3rem] shadow-2xl">
               <h2 className="text-4xl font-serif font-light mb-6">
                 Una comunidad de mujeres <span className="italic text-terracotta">reinventándose</span>
               </h2>
@@ -590,25 +639,31 @@ export default function Landing() {
               >
                 Sumarme en Instagram
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* 7. SESIONES 1:1 */}
       <section id="inversion" className="py-32 bg-cream">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <h2 className="text-5xl font-serif font-light text-ink mb-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
+          className="max-w-4xl mx-auto px-6 lg:px-12 text-center"
+        >
+          <motion.h2 variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.7 }} className="text-5xl font-serif font-light text-ink mb-6">
             Sesiones de <span className="italic text-terracotta">acompañamiento 1:1</span>
-          </h2>
-          <p className="text-xl text-ink-light font-light mb-8 leading-relaxed max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-xl text-ink-light font-light mb-8 leading-relaxed max-w-2xl mx-auto">
             Las sesiones individuales están pensadas para mujeres que sienten que están atravesando una transición profunda y quieren un espacio de acompañamiento personal.
-          </p>
-          <p className="text-lg text-ink-light font-light mb-10">
+          </motion.p>
+          <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg text-ink-light font-light mb-10">
             En las sesiones trabajamos temas como:
-          </p>
+          </motion.p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto mb-10 px-6">
+          <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto mb-10 px-6">
             {[
               "Crisis de los 50", "Búsqueda de propósito.",
               "Reinventarse profesionalmente", "Nido vacío",
@@ -620,46 +675,54 @@ export default function Landing() {
                 {topic}
               </div>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="bg-sand/30 rounded-2xl p-6 mb-10 max-w-md mx-auto text-left">
+          <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="bg-sand/30 rounded-2xl p-6 mb-10 max-w-md mx-auto text-left">
             <p className="font-medium text-ink mb-1">Formato</p>
             <p className="text-ink-light font-light">Sesiones online</p>
             <p className="font-medium text-ink mt-4 mb-1">Duración</p>
             <p className="text-ink-light font-light">60 minutos</p>
-          </div>
+          </motion.div>
 
-          <p className="text-lg text-ink-light font-light mb-10 max-w-2xl mx-auto leading-relaxed">
+          <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg text-ink-light font-light mb-10 max-w-2xl mx-auto leading-relaxed">
             Este es un espacio de conversación profunda, reflexión y claridad para ayudarte a construir la próxima etapa de tu vida.
-          </p>
+          </motion.p>
 
-          <a
+          <motion.a
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            transition={{ duration: 0.5 }}
             href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-12 py-5 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-ink hover:bg-terracotta transition-colors duration-300"
           >
             Reservar mi sesión
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </section>
 
       {/* 8. CIERRE / CALL TO ACTION */}
       <section className="py-32 bg-sand/50">
-        <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
-          <h2 className="text-4xl font-serif font-light text-ink mb-4">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
+          className="max-w-3xl mx-auto px-6 lg:px-12 text-center"
+        >
+          <motion.h2 variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.7 }} className="text-4xl font-serif font-light text-ink mb-4">
             Tu reinvención puede empezar hoy
-          </h2>
-          <p className="text-lg text-ink-light font-light mb-6 leading-relaxed">
+          </motion.h2>
+          <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg text-ink-light font-light mb-6 leading-relaxed">
             Si sientes que estás atravesando un momento de cambio y quieres acompañamiento en este proceso, puedes comenzar de dos maneras:
-          </p>
-          <p className="text-xl font-serif italic text-terracotta mb-4">Reservando una sesión individual</p>
-          <p className="text-lg text-ink-light font-light mb-4">o</p>
-          <p className="text-xl font-serif italic text-terracotta mb-10">Participando en alguno de los talleres de Reinventadas 5.0.</p>
-          <p className="text-lg text-ink-light font-light mb-12 leading-relaxed">
+          </motion.p>
+          <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-xl font-serif italic text-terracotta mb-4">Reservando una sesión individual</motion.p>
+          <motion.p variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} transition={{ duration: 0.3 }} className="text-lg text-ink-light font-light mb-4">o</motion.p>
+          <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-xl font-serif italic text-terracotta mb-10">Participando en alguno de los talleres de Reinventadas 5.0.</motion.p>
+          <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg text-ink-light font-light mb-12 leading-relaxed">
             La segunda mitad de la vida no es el final de la historia.
             Muchas veces es el capítulo donde empezamos a vivir con más verdad, más libertad y más sentido.
-          </p>
+          </motion.p>
 
           {isSuccess ? (
             <motion.div
@@ -702,7 +765,7 @@ export default function Landing() {
               </button>
             </form>
           )}
-        </div>
+        </motion.div>
       </section>
 
     </div>
