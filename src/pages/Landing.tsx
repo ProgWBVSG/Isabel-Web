@@ -67,7 +67,7 @@ export default function Landing() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
+                href="https://reinventadas5-0.tiendup.com/curso/como-disenar-tu-proxima-etapa-despues-de-los-50"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-terracotta hover:bg-terracotta/80 transition-colors duration-300 shadow-lg"
@@ -306,7 +306,7 @@ export default function Landing() {
             </h3>
           </div>
           <a
-            href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
+            href="https://reinventadas5-0.tiendup.com/curso/como-disenar-tu-proxima-etapa-despues-de-los-50"
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-terracotta bg-cream hover:bg-sand transition-colors duration-300 shadow-xl"
@@ -392,7 +392,7 @@ export default function Landing() {
             className="mt-16 text-center"
           >
             <a
-              href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
+              href="https://reinventadas5-0.tiendup.com/curso/como-disenar-tu-proxima-etapa-despues-de-los-50"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-ink hover:bg-terracotta transition-colors duration-300"
@@ -503,7 +503,7 @@ export default function Landing() {
               "Si yo pude reinventarme, vos también podés. Solo necesitás dar el primer paso."
             </p>
             <a
-              href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
+              href="https://reinventadas5-0.tiendup.com/curso/como-disenar-tu-proxima-etapa-despues-de-los-50"
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-terracotta hover:bg-terracotta/80 transition-colors duration-300 shadow-md"
@@ -691,7 +691,7 @@ export default function Landing() {
           <motion.a
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             transition={{ duration: 0.5 }}
-            href="https://tiendaup.com/tu-tienda/producto/reinventadas-5-0"
+            href="https://reinventadas5-0.tiendup.com/curso/como-disenar-tu-proxima-etapa-despues-de-los-50"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-12 py-5 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-ink hover:bg-terracotta transition-colors duration-300"
