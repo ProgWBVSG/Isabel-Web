@@ -691,7 +691,7 @@ export default function Landing() {
           <motion.a
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
             transition={{ duration: 0.5 }}
-            href="https://reinventadas5-0.tiendup.com/curso/como-disenar-tu-proxima-etapa-despues-de-los-50"
+            href="https://wa.me/5491154581170?text=Hola%20Isabel,%20estoy%20en%20tu%20web%20y%20quiero%20reservar%20una%20sesi%C3%B3n%201:1"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-12 py-5 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-ink hover:bg-terracotta transition-colors duration-300"
