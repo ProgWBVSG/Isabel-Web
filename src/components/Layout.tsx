@@ -1,5 +1,5 @@
 import { ReactNode, useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import FAQAssistant from './FAQAssistant';
@@ -27,24 +27,12 @@ export default function Layout({ children }: LayoutProps) {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: 'El Proceso', path: '#programa' },
-    { name: 'Sobre Mí', path: '#sobre-mi' },
-    { name: 'Talleres', path: '#comunidad' },
-    { name: 'Testimonios', path: '#testimonios' },
+    { name: 'Sobre Mí', path: '/sobre-mi' },
+    { name: 'Talleres', path: '/talleres' },
+    { name: 'Mentoría Individual', path: '/mentoria' },
+    { name: 'Testimonios', path: '/testimonios' },
+    { name: 'Reinventadas Prensa', path: '/prensa' },
   ];
-
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    e.preventDefault();
-    setIsMenuOpen(false);
-    const element = document.querySelector(path);
-    if (element) {
-      const offsetTop = element.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-ink bg-cream">
@@ -57,30 +45,32 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <a href="#" onClick={(e) => scrollToSection(e, '#inicio')} className="flex items-center gap-2">
+            <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2">
               <span className="font-serif text-2xl font-medium tracking-tight text-ink">
                 Reinventadas <span className="text-terracotta italic">5.0</span>
               </span>
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-10">
+            <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.path}
-                  onClick={(e) => scrollToSection(e, link.path)}
+                  to={link.path}
+                  onClick={() => setIsMenuOpen(false)}
                   className="text-sm font-medium tracking-wide text-ink hover:text-terracotta transition-colors uppercase"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
               <a
-                href="#inversion"
-                onClick={(e) => scrollToSection(e, '#inversion')}
+                href="https://mi.tiendup.com/stores/reinventadas5-0/themes/customize/64586/72572_66219-69d456d51948c?page_id=home"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-ink text-cream px-6 py-2.5 rounded-full text-sm font-medium hover:bg-terracotta transition-colors"
+                onClick={() => setIsMenuOpen(false)}
               >
-                Reservar mi lugar
+                Ver propuesta
               </a>
             </nav>
 
@@ -107,21 +97,23 @@ export default function Layout({ children }: LayoutProps) {
           >
             <div className="px-6 py-8 flex flex-col gap-6">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.path}
-                  onClick={(e) => scrollToSection(e, link.path)}
+                  to={link.path}
+                  onClick={() => setIsMenuOpen(false)}
                   className="text-2xl font-serif text-ink"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
               <a
-                href="#inversion"
-                onClick={(e) => scrollToSection(e, '#inversion')}
+                href="https://mi.tiendup.com/stores/reinventadas5-0/themes/customize/64586/72572_66219-69d456d51948c?page_id=home"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMenuOpen(false)}
                 className="bg-ink text-cream px-6 py-4 rounded-full text-center font-medium mt-4 text-lg"
               >
-                Reservar mi lugar
+                Ver propuesta
               </a>
             </div>
           </motion.div>
@@ -176,4 +168,3 @@ export default function Layout({ children }: LayoutProps) {
     </div>
   );
 }
-

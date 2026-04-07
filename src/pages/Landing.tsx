@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, CheckCircle2, Star, Mail } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Star, Mail, Mic, Newspaper, ExternalLink } from 'lucide-react';
 
 const QUOTES = [
   { text: "Nunca es tarde para empezar.", bg: "bg-terracotta", textColor: "text-cream" },
@@ -67,19 +67,19 @@ export default function Landing() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://reinventadas5-0.tiendup.com/curso/como-disenar-tu-proxima-etapa-despues-de-los-50"
+                href="https://mi.tiendup.com/stores/reinventadas5-0/themes/customize/64586/72572_66219-69d456d51948c?page_id=home"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-terracotta hover:bg-terracotta/80 transition-colors duration-300 shadow-lg"
               >
                 <ArrowRight className="h-4 w-4" />
-                Quiero el programa
+                Quiero empezar
               </a>
               <a
-                href="#programa"
+                href="#mentoria"
                 className="inline-flex items-center justify-center px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-ink border border-ink/20 hover:border-terracotta hover:text-terracotta transition-colors duration-300"
               >
-                Ver qué incluye
+                Ver propuesta
               </a>
             </div>
           </motion.div>
@@ -306,105 +306,18 @@ export default function Landing() {
             </h3>
           </div>
           <a
-            href="https://reinventadas5-0.tiendup.com/curso/como-disenar-tu-proxima-etapa-despues-de-los-50"
+            href="https://mi.tiendup.com/stores/reinventadas5-0/themes/customize/64586/72572_66219-69d456d51948c?page_id=home"
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-terracotta bg-cream hover:bg-sand transition-colors duration-300 shadow-xl"
           >
             <ArrowRight className="h-4 w-4" />
-            Reservar mi lugar
+            Quiero reinventarme
           </a>
         </motion.div>
       </section>
 
-      {/* 3. THE PROGRAM (Oversized Typographic) */}
-      <section id="programa" className="py-32 bg-sand/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="mb-20"
-          >
-            <h2 className="text-5xl md:text-6xl font-serif font-light text-ink mb-6">
-              El proceso <span className="italic text-terracotta">Reinventadas 5.0</span>
-            </h2>
-            <p className="text-xl text-ink-light font-light max-w-2xl">
-              Acompaño a mujeres en un proceso de transformación personal enfocado en tres etapas.
-            </p>
-          </motion.div>
-
-          <div className="space-y-0">
-            {[
-              {
-                title: "Comprender la transición",
-                intro: "Antes de reinventarnos necesitamos entender qué está pasando.",
-                items: ["Los cambios emocionales de esta etapa", "Las creencias que nos limitan.", "Los roles que construyeron nuestra identidad."],
-                closing: "Este paso trae algo muy importante: claridad."
-              },
-              {
-                title: "Reconectar con tus deseos",
-                intro: "Durante muchos años muchas mujeres viven para otros. En esta etapa comenzamos a reconectar con:",
-                items: ["Deseos postergados.", "Talentos olvidados.", "Intereses propios.", "Valores profundos."],
-                closing: "Aquí empieza a aparecer una nueva versión tuya."
-              },
-              {
-                title: "Crear tu próxima etapa",
-                intro: "La reinvención no es solo interna. También implica acción. En esta etapa trabajamos en:",
-                items: ["Nuevos proyectos personales.", "Cambios laborales o creativos.", "Nuevas formas de vivir y disfrutar la vida."],
-                closing: "No se trata de empezar de cero. Se trata de construir desde todo lo que ya eres."
-              }
-            ].map((session, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="group relative flex flex-col md:flex-row md:items-start gap-6 md:gap-12 py-10 border-b border-ink/10 hover:bg-white/50 transition-colors px-4 -mx-4 rounded-2xl"
-              >
-                <div className="font-serif text-6xl md:text-7xl font-light text-terracotta/30 group-hover:text-terracotta transition-colors shrink-0">
-                  0{i + 1}
-                </div>
-                <div>
-                  <h3 className="text-2xl font-serif text-ink mb-3">{session.title}</h3>
-                  <p className="text-ink-light font-light mb-3">{session.intro}</p>
-                  <ul className="space-y-1 mb-4">
-                    {session.items.map((item, j) => (
-                      <li key={j} className="flex gap-3 text-ink-light font-light">
-                        <span className="text-terracotta">—</span>{item}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-ink font-serif italic">{session.closing}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* CTA dentro del programa */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-16 text-center"
-          >
-            <a
-              href="https://reinventadas5-0.tiendup.com/curso/como-disenar-tu-proxima-etapa-despues-de-los-50"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-ink hover:bg-terracotta transition-colors duration-300"
-            >
-              <ArrowRight className="h-4 w-4" />
-              Empezar mi transformación
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 4. ABOUT ISABEL (Split Layout) */}
+      {/* 3. SOBRE MÍ */}
       <section id="sobre-mi" className="py-32 bg-cream">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
@@ -503,149 +416,96 @@ export default function Landing() {
               "Si yo pude reinventarme, vos también podés. Solo necesitás dar el primer paso."
             </p>
             <a
-              href="https://reinventadas5-0.tiendup.com/curso/como-disenar-tu-proxima-etapa-despues-de-los-50"
+              href="https://mi.tiendup.com/stores/reinventadas5-0/themes/customize/64586/72572_66219-69d456d51948c?page_id=home"
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-terracotta hover:bg-terracotta/80 transition-colors duration-300 shadow-md"
             >
               <ArrowRight className="h-4 w-4" />
-              Dar el primer paso
+              Más info
             </a>
           </div>
         </motion.div>
       </section>
 
-      {/* 5. TESTIMONIALS (Warm Organic) */}
-      <section id="testimonios" className="py-32 bg-olive text-cream">
+      {/* 4. TALLERES */}
+      <section id="talleres" className="py-32 bg-sand/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="text-center mb-20"
+            className="mb-16"
           >
-            <h2 className="text-5xl font-serif font-light mb-6">Historias Reales</h2>
-            <p className="text-xl font-light text-cream/70">Mujeres que ya están vibrando.</p>
+            <h2 className="text-5xl md:text-6xl font-serif font-light text-ink mb-6">
+              Talleres para <span className="italic text-terracotta">mujeres 50+</span>
+            </h2>
+            <p className="text-xl text-ink-light font-light max-w-2xl">
+              Espacios grupales donde trabajamos los grandes temas de esta etapa de la vida.
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                name: "Laura, 55",
-                quote: "Antes me sentía estancada. La menopausia y el nido vacío me habían dejado sin rumbo. Después del programa, recuperé la ilusión. Descubrí que tengo mucho para dar.",
-                img: "https://picsum.photos/seed/laura-elegant/200/200"
+                num: "01",
+                title: "Reinventarte después de los 50",
+                desc: "Un espacio para repensar tu identidad, tus deseos y tu próxima etapa. Exploramos juntas qué dejás atrás y qué nuevo proyecto de vida querés construir.",
               },
               {
-                name: "Silvia, 48",
-                quote: "Vivía para cumplir expectativas ajenas. Hoy me siento más segura y vibrante que a los 30. Lo que más valoro es el enfoque práctico de cada sesión.",
-                img: "https://picsum.photos/seed/silvia-elegant/200/200"
-              }
-            ].map((t, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.2 }} className="bg-white/5 p-10 rounded-[2rem] border border-white/10 backdrop-blur-sm">
-                <div className="flex items-center gap-6 mb-8">
-                  <img src={t.img} alt={t.name} className="w-20 h-20 rounded-full object-cover" referrerPolicy="no-referrer" />
-                  <div>
-                    <h4 className="font-serif text-2xl">{t.name}</h4>
-                    <div className="flex gap-1 mt-2">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="h-4 w-4 text-terracotta" fill="currentColor" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <p className="font-light text-lg leading-relaxed text-cream/90 italic">"{t.quote}"</p>
+                num: "02",
+                title: "Encontrar propósito en la segunda mitad de la vida",
+                desc: "¿Qué significa vivir con más sentido después de los 50? En este taller exploramos herramientas concretas para reconectar con lo que realmente importa.",
+              },
+              {
+                num: "03",
+                title: "Volver a empezar",
+                desc: "Para mujeres que sienten que una etapa cerró y quieren abrirse a una nueva con más conciencia, valentía y herramientas.",
+              },
+            ].map((taller, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+                className="group bg-white rounded-[2rem] p-10 shadow-sm border border-sand hover:shadow-lg hover:border-terracotta/30 transition-all duration-300"
+              >
+                <span className="font-serif text-5xl font-light text-terracotta/30 group-hover:text-terracotta transition-colors block mb-6">
+                  {taller.num}
+                </span>
+                <h3 className="text-xl font-serif text-ink mb-4 leading-snug">{taller.title}</h3>
+                <p className="text-ink-light font-light leading-relaxed">{taller.desc}</p>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* 6. TALLERES & COMUNIDAD */}
-      <section id="comunidad" className="py-32 bg-sand/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-14 text-center"
           >
-            <motion.div variants={{ hidden: { opacity: 0, x: -30 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.7 }}>
-              <h2 className="text-4xl font-serif font-light text-ink mb-8">
-                Talleres para <span className="italic text-terracotta">mujeres 50+</span>
-              </h2>
-              <p className="text-lg text-ink-light font-light mb-8 leading-relaxed">
-                Además de las sesiones individuales, organizo talleres grupales donde trabajamos los grandes temas de esta etapa de la vida.
-              </p>
-              <p className="text-ink-light font-light mb-6">Algunos de los talleres incluyen:</p>
-              <div className="space-y-6">
-                <div className="flex gap-4 items-start">
-                  <CheckCircle2 className="h-6 w-6 text-terracotta shrink-0 mt-1" />
-                  <div>
-                    <p className="text-ink font-serif italic text-lg">Reinventarte después de los 45</p>
-                    <p className="text-ink-light font-light text-sm mt-1">Un espacio para repensar tu identidad, tus deseos y tu próxima etapa.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4 items-start">
-                  <CheckCircle2 className="h-6 w-6 text-terracotta shrink-0 mt-1" />
-                  <div>
-                    <p className="text-ink font-serif italic text-lg">Encontrar propósito en la segunda mitad de la vida</p>
-                    <p className="text-ink-light font-light text-sm mt-1">Exploramos qué significa vivir con más sentido después de los 50.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4 items-start">
-                  <CheckCircle2 className="h-6 w-6 text-terracotta shrink-0 mt-1" />
-                  <div>
-                    <p className="text-ink font-serif italic text-lg">Volver a empezar.</p>
-                  </div>
-                </div>
-              </div>
-              <p className="text-ink-light font-light mt-8 leading-relaxed">
-                Son espacios para atravesar este cambio con más conciencia y nuevas posibilidades.
-                Los talleres también son una oportunidad para conectar con otras mujeres que están viviendo procesos similares.
-              </p>
-            </motion.div>
-            <motion.div variants={{ hidden: { opacity: 0, x: 30 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.7 }} className="bg-ink text-cream p-12 rounded-[3rem] shadow-2xl">
-              <h2 className="text-4xl font-serif font-light mb-6">
-                Una comunidad de mujeres <span className="italic text-terracotta">reinventándose</span>
-              </h2>
-              <p className="text-cream/80 font-light mb-6 text-lg leading-relaxed">
-                Reinventadas 5.0 también es una comunidad.
-              </p>
-              <p className="text-cream/70 font-light mb-6 text-lg leading-relaxed">
-                Hoy más de 25.000 mujeres forman parte de este espacio a través de Instagram, donde compartimos reflexiones, conversaciones y experiencias sobre esta etapa de la vida.
-              </p>
-              <p className="text-cream/80 font-light mb-4 text-lg">
-                El objetivo es simple:
-              </p>
-              <p className="font-serif italic text-terracotta text-xl mb-8">
-                que ninguna mujer sienta que está atravesando esta transición sola.
-              </p>
-              <p className="text-cream/70 font-light mb-4">
-                Aquí hablamos de temas que muchas veces quedan silenciados:
-              </p>
-              <p className="text-cream/80 font-light mb-8">
-                Edadismo, menopausia, reinventarse profesionalmente, nuevos comienzos, la libertad de esta etapa.
-              </p>
-              <p className="font-serif italic text-cream/90 mb-8">
-                Porque la segunda mitad de la vida no tiene por qué ser un declive. Puede ser un despertar.
-              </p>
-              <a
-                href="https://instagram.com/reinventadas5.0"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-ink bg-cream hover:bg-sand transition-colors"
-              >
-                Sumarme en Instagram
-              </a>
-            </motion.div>
+            <p className="text-ink-light font-light mb-6 text-lg">
+              Los talleres son también una oportunidad para conectar con otras mujeres que están viviendo procesos similares.
+            </p>
+            <a
+              href="https://mi.tiendup.com/stores/reinventadas5-0/themes/customize/64586/72572_66219-69d456d51948c?page_id=home"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-ink hover:bg-terracotta transition-colors duration-300"
+            >
+              <ArrowRight className="h-4 w-4" />
+              Quiero empezar
+            </a>
           </motion.div>
         </div>
       </section>
 
-      {/* 7. SESIONES 1:1 */}
-      <section id="inversion" className="py-32 bg-cream">
+      {/* 5. MENTORÍA INDIVIDUAL (ex "El Proceso") */}
+      <section id="mentoria" className="py-32 bg-cream">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -654,7 +514,7 @@ export default function Landing() {
           className="max-w-4xl mx-auto px-6 lg:px-12 text-center"
         >
           <motion.h2 variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.7 }} className="text-5xl font-serif font-light text-ink mb-6">
-            Sesiones de <span className="italic text-terracotta">acompañamiento 1:1</span>
+            Mentoría <span className="italic text-terracotta">individual</span>
           </motion.h2>
           <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-xl text-ink-light font-light mb-8 leading-relaxed max-w-2xl mx-auto">
             Las sesiones individuales están pensadas para mujeres que sienten que están atravesando una transición profunda y quieren un espacio de acompañamiento personal.
@@ -701,7 +561,201 @@ export default function Landing() {
         </motion.div>
       </section>
 
-      {/* 8. CIERRE / CALL TO ACTION */}
+      {/* 6. TESTIMONIOS */}
+      <section id="testimonios" className="py-32 bg-olive text-cream">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl font-serif font-light mb-6">Historias Reales</h2>
+            <p className="text-xl font-light text-cream/70">Mujeres que ya están vibrando.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {[
+              {
+                name: "Marta Garcés",
+                age: "58",
+                image: "/images/marta.jpg",
+                quote: "A los 58 años, sentía que ya había dado todo y vivía en automático. Estas sesiones me ayudaron a sacudirme el miedo al 'qué dirán' y rediseñar mi rutina con un propósito que me apasiona. Hoy me siento más viva y dueña de mi tiempo que nunca.",
+              },
+              {
+                name: "Elena Benítez",
+                age: "62",
+                image: "/images/elena.jpg",
+                quote: "Llegué a los 62 con el nido vacío y mucha incertidumbre. Encontré las herramientas prácticas para reinventarme sin sentir que era 'demasiado tarde'. Pasé de la parálisis a la acción, recuperando la confianza en mis propios talentos y proyectos.",
+              },
+              {
+                name: "Silvia Quintana",
+                age: "54",
+                image: "/images/silvia.jpg",
+                quote: "Este espacio fue el impulso que necesitaba para dejar de postergarme. A mis 54 años, aprendí que esta etapa no es el final, sino el mejor momento para elegirme. Recibí calidez pura y claridad total para buscar un cambio real en mi vida.",
+              },
+            ].map((t, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: i * 0.15 }} className="bg-white/5 p-10 rounded-[2rem] border border-white/10 backdrop-blur-sm relative">
+                <div className="flex items-center gap-6 mb-8">
+                  <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-terracotta shadow-lg shrink-0">
+                    <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <h4 className="font-serif text-2xl mb-1">{t.name}, {t.age}</h4>
+                    <div className="flex gap-1 mt-2">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star key={star} className="h-4 w-4 text-terracotta" fill="currentColor" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="font-light text-lg leading-relaxed text-cream/90 italic">"{t.quote}"</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. REINVENTADAS EN LOS MEDIOS */}
+      <section id="medios" className="py-32 bg-sand/20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="mb-16 text-center"
+          >
+            <h2 className="text-5xl md:text-6xl font-serif font-light text-ink mb-6">
+              Reinventadas <span className="italic text-terracotta">en los Medios</span>
+            </h2>
+            <p className="text-xl text-ink-light font-light max-w-2xl mx-auto">
+              Conversaciones, entrevistas y artículos sobre la segunda mitad de la vida.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+            {/* PODCAST CARD */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-sand hover:shadow-lg transition-all duration-300"
+            >
+              <div className="bg-[#1DB954]/10 px-10 pt-10 pb-4 flex items-center gap-4">
+                <div className="w-12 h-12 bg-[#1DB954] rounded-full flex items-center justify-center shrink-0">
+                  <Mic className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-ink/50 font-medium">Podcast</p>
+                  <p className="text-xs text-ink/40 mt-0.5">Menopausia: mitos y verdades</p>
+                </div>
+              </div>
+              <div className="px-10 pb-4">
+                <h3 className="text-2xl font-serif text-ink mb-3 leading-snug">
+                  Reinventadas 5.0 y Menopausia
+                </h3>
+                <p className="text-ink-light font-light mb-6 leading-relaxed">
+                  Isabel fue entrevistada en el podcast <span className="italic">Menopausia: mitos y verdades</span>, donde habló sobre la transición de los 50, el edadismo y cómo crear una nueva etapa de vida con propósito.
+                </p>
+              </div>
+              {/* Spotify Embed */}
+              <div className="px-6 pb-8">
+                <iframe
+                  style={{ borderRadius: '12px' }}
+                  src="https://open.spotify.com/embed/episode/6yBYDAdZFQBsYaO7KL0Ou4?utm_source=generator&theme=0"
+                  width="100%"
+                  height="152"
+                  frameBorder="0"
+                  allowFullScreen
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                  title="Podcast Reinventadas 5.0 - Menopausia mitos y verdades"
+                ></iframe>
+              </div>
+            </motion.div>
+
+            {/* ARTÍCULO CARD */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-sand hover:shadow-lg transition-all duration-300 flex flex-col"
+            >
+              <div className="bg-terracotta/10 px-10 pt-10 pb-4 flex items-center gap-4">
+                <div className="w-12 h-12 bg-terracotta rounded-full flex items-center justify-center shrink-0">
+                  <Newspaper className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-ink/50 font-medium">Artículo</p>
+                  <p className="text-xs text-ink/40 mt-0.5">Sophia Online</p>
+                </div>
+              </div>
+              <div className="px-10 py-6 flex-grow">
+                <h3 className="text-2xl font-serif text-ink mb-4 leading-snug">
+                  "A partir de los 50, la vida tiene sentido si escuchamos el llamado del alma"
+                </h3>
+                <p className="text-ink-light font-light mb-6 leading-relaxed">
+                  Un artículo escrito por Isabel para la revista Sophia Online, donde reflexiona sobre cómo los 50 pueden ser el inicio de la etapa más auténtica y significativa de la vida de una mujer.
+                </p>
+              </div>
+              <div className="px-10 pb-10">
+                <a
+                  href="https://www.sophiaonline.com.ar/a-partir-de-los-50-la-vida-tiene-sentido-si-escuchamos-el-llamado-del-alma/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-terracotta hover:bg-terracotta/80 transition-colors duration-300"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  Leer el artículo
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. COMUNIDAD (ex sección talleres+comunidad del home — solo la parte de comunidad) */}
+      <section className="py-24 bg-ink text-cream">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <h2 className="text-4xl font-serif font-light mb-6">
+              Una comunidad de mujeres <span className="italic text-terracotta">reinventándose</span>
+            </h2>
+            <p className="text-cream/80 font-light mb-6 text-lg leading-relaxed">
+              Reinventadas 5.0 también es una comunidad.
+            </p>
+            <p className="text-cream/70 font-light mb-6 text-lg leading-relaxed">
+              Hoy más de 25.000 mujeres forman parte de este espacio a través de Instagram, donde compartimos reflexiones, conversaciones y experiencias sobre esta etapa de la vida.
+            </p>
+            <p className="font-serif italic text-terracotta text-xl mb-8">
+              que ninguna mujer sienta que está atravesando esta transición sola.
+            </p>
+            <p className="text-cream/70 font-light mb-8">
+              Edadismo, menopausia, reinventarse profesionalmente, nuevos comienzos, la libertad de esta etapa.
+            </p>
+            <a
+              href="https://instagram.com/reinventadas5.0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-ink bg-cream hover:bg-sand transition-colors"
+            >
+              Sumarme en Instagram
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 9. CIERRE / CALL TO ACTION */}
       <section className="py-32 bg-sand/50">
         <motion.div
           initial="hidden"
