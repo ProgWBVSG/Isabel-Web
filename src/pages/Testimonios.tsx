@@ -22,19 +22,19 @@ export default function Testimonios() {
               {
                 name: "Marta Garcés",
                 age: "58",
-                image: "/images/marta.jpg",
+                image: "https://i.postimg.cc/4y5MmKqW/Captura-de-pantalla-2026-04-05-165054.png",
                 quote: "A los 58 años, sentía que ya había dado todo y vivía en automático. Estas sesiones me ayudaron a sacudirme el miedo al 'qué dirán' y rediseñar mi rutina con un propósito que me apasiona. Hoy me siento más viva y dueña de mi tiempo que nunca.",
               },
               {
                 name: "Elena Benítez",
                 age: "62",
-                image: "/images/elena.jpg",
+                image: "/images/testimonio_elena.png",
                 quote: "Llegué a los 62 con el nido vacío y mucha incertidumbre. Encontré las herramientas prácticas para reinventarme sin sentir que era 'demasiado tarde'. Pasé de la parálisis a la acción, recuperando la confianza en mis propios talentos y proyectos.",
               },
               {
                 name: "Silvia Quintana",
                 age: "54",
-                image: "/images/silvia.jpg",
+                image: "/images/testimonio_silvia.png",
                 quote: "Este espacio fue el impulso que necesitaba para dejar de postergarme. A mis 54 años, aprendí que esta etapa no es el final, sino el mejor momento para elegirme. Recibí calidez pura y claridad total para buscar un cambio real en mi vida.",
               },
             ].map((t, i) => (
