@@ -67,7 +67,7 @@ export default function Talleres() {
               Los talleres son también una oportunidad para conectar con otras mujeres que están viviendo procesos similares.
             </p>
             <a
-              href="https://mi.tiendup.com/stores/reinventadas5-0/themes/customize/64586/72572_66219-69d456d51948c?page_id=home"
+              href="https://reinventadas5-0.tiendup.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-ink hover:bg-terracotta transition-colors duration-300"
