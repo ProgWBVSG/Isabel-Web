@@ -604,16 +604,17 @@ export default function Landing() {
                 transition={{ duration: 0.5, delay: i * 0.12 }}
                 className="bg-white/5 rounded-2xl border border-white/10 overflow-hidden backdrop-blur-sm"
               >
-                {/* Foto superior */}
-                <div className="w-full h-48 overflow-hidden">
-                  <img src={t.image} alt={t.name} className="w-full h-full object-cover object-top" />
-                </div>
                 {/* Contenido */}
                 <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <div>
-                      <h4 className="font-serif text-lg leading-tight">{t.name}</h4>
-                      <p className="text-cream/50 text-sm">{t.age} años</p>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 rounded-full overflow-hidden shrink-0 border border-white/20">
+                        <img src={t.image} alt={t.name} className="w-full h-full object-cover object-top" />
+                      </div>
+                      <div>
+                        <h4 className="font-serif text-lg leading-tight">{t.name}</h4>
+                        <p className="text-cream/50 text-sm">{t.age} años</p>
+                      </div>
                     </div>
                     <div className="flex gap-0.5">
                       {[1, 2, 3, 4, 5].map((star) => (
