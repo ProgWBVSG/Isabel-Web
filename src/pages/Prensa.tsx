@@ -36,8 +36,8 @@ export default function Prensa() {
                   <Mic className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-ink/50 font-medium">Podcast</p>
-                  <p className="text-xs text-ink/40 mt-0.5">Menopausia: mitos y verdades</p>
+                  <p className="text-xs uppercase tracking-widest text-ink/70 font-medium">Podcast</p>
+                  <p className="text-xs text-ink/60 mt-0.5">Menopausia: mitos y verdades</p>
                 </div>
               </div>
               <div className="px-10 pb-4">
@@ -77,8 +77,8 @@ export default function Prensa() {
                   <Newspaper className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-widest text-ink/50 font-medium">Artículo</p>
-                  <p className="text-xs text-ink/40 mt-0.5">Sophia Online</p>
+                  <p className="text-xs uppercase tracking-widest text-ink/70 font-medium">Artículo</p>
+                  <p className="text-xs text-ink/60 mt-0.5">Sophia Online</p>
                 </div>
               </div>
               <div className="px-10 py-6 flex-grow">
