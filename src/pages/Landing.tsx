@@ -239,7 +239,7 @@ export default function Landing() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-tight text-balance mb-12"
           >
-            La crisis de los +50 de la que <span className="italic text-terracotta">casi nadie habla</span>
+            La crisis de los +50 de la que <span className="italic text-pink">casi nadie habla</span>
           </motion.h2>
 
           <motion.div
@@ -253,16 +253,16 @@ export default function Landing() {
               A partir de los 50 años pasan muchas cosas al mismo tiempo.
             </motion.p>
             <motion.ul variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="space-y-4 font-light text-cream/80 text-lg text-left max-w-lg mx-auto mb-10">
-              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>Los hijos crecen y se van.</li>
-              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>Muchas parejas cambian o terminan.</li>
-              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>El trabajo deja de representar quién somos.</li>
-              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>El cuerpo cambia.</li>
-              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-terracotta">—</span>La sociedad empieza a mirarnos de otra manera.</li>
+              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-pink">—</span>Los hijos crecen y se van.</li>
+              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-pink">—</span>Muchas parejas cambian o terminan.</li>
+              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-pink">—</span>El trabajo deja de representar quién somos.</li>
+              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-pink">—</span>El cuerpo cambia.</li>
+              <li className="flex gap-4 border-t border-cream/10 pt-4"><span className="text-pink">—</span>La sociedad empieza a mirarnos de otra manera.</li>
             </motion.ul>
             <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg font-light text-cream/80 leading-relaxed mb-6">
               Y muchas mujeres sienten algo difícil de explicar:
             </motion.p>
-            <motion.p variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} className="text-xl font-serif italic text-terracotta mb-8">
+            <motion.p variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} className="text-xl font-serif italic text-pink mb-8">
               una mezcla de tristeza, miedo y vacío.
             </motion.p>
             <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg font-light text-cream/80 leading-relaxed mb-4">
@@ -271,7 +271,7 @@ export default function Landing() {
             <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg font-light text-cream/80 leading-relaxed mb-8">
               Sino porque aparece una pregunta que antes no estaba:
             </motion.p>
-            <motion.p variants={{ hidden: { opacity: 0, y: 30, scale: 0.95 }, visible: { opacity: 1, y: 0, scale: 1 } }} transition={{ duration: 0.7 }} className="text-2xl font-serif italic text-terracotta mb-10">
+            <motion.p variants={{ hidden: { opacity: 0, y: 30, scale: 0.95 }, visible: { opacity: 1, y: 0, scale: 1 } }} transition={{ duration: 0.7 }} className="text-2xl font-serif italic text-pink mb-10">
               ¿Quién soy ahora?
             </motion.p>
             <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg font-light text-cream/80 leading-relaxed mb-4">
@@ -735,7 +735,7 @@ export default function Landing() {
             transition={{ duration: 0.7 }}
           >
             <h2 className="text-4xl font-serif font-light mb-6">
-              Una comunidad de mujeres <span className="italic text-terracotta">reinventándose</span>
+              Una comunidad de mujeres <span className="italic text-pink">reinventándose</span>
             </h2>
             <p className="text-cream/80 font-light mb-6 text-lg leading-relaxed">
               Reinventadas 5.0 también es una comunidad.
@@ -743,7 +743,7 @@ export default function Landing() {
             <p className="text-cream/70 font-light mb-6 text-lg leading-relaxed">
               Hoy más de 25.000 mujeres forman parte de este espacio a través de Instagram, donde compartimos reflexiones, conversaciones y experiencias sobre esta etapa de la vida.
             </p>
-            <p className="font-serif italic text-terracotta text-xl mb-8">
+            <p className="font-serif italic text-pink text-xl mb-8">
               que ninguna mujer sienta que está atravesando esta transición sola.
             </p>
             <p className="text-cream/70 font-light mb-8">
