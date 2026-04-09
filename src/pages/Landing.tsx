@@ -75,12 +75,6 @@ export default function Landing() {
                 <ArrowRight className="h-4 w-4" />
                 Quiero empezar
               </a>
-              <a
-                href="#mentoria"
-                className="inline-flex items-center justify-center px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-ink border border-ink/20 hover:border-terracotta hover:text-terracotta transition-colors duration-300"
-              >
-                Ver propuesta
-              </a>
             </div>
           </motion.div>
 
@@ -300,7 +294,6 @@ export default function Landing() {
           className="max-w-4xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8"
         >
           <div>
-            <p className="text-cream/80 text-sm uppercase tracking-widest mb-2">Plazas limitadas</p>
             <h3 className="text-3xl md:text-4xl font-serif font-light text-cream">
               ¿Estás lista para <span className="italic">reinventarte</span>?
             </h3>
