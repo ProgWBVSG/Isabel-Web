@@ -67,7 +67,7 @@ export default function Landing() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="https://reinventadas5-0.tiendup.com/"
+                href="https://reinventadas5-0.tiendup.com/page/disenar-tu-proxima-etapa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-terracotta hover:bg-terracotta/80 transition-colors duration-300 shadow-lg"
@@ -299,7 +299,7 @@ export default function Landing() {
             </h3>
           </div>
           <a
-            href="https://reinventadas5-0.tiendup.com/"
+            href="https://reinventadas5-0.tiendup.com/page/disenar-tu-proxima-etapa"
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-terracotta bg-cream hover:bg-sand transition-colors duration-300 shadow-xl"
@@ -409,7 +409,7 @@ export default function Landing() {
               "Si yo pude reinventarme, vos también podés. Solo necesitás dar el primer paso."
             </p>
             <a
-              href="https://reinventadas5-0.tiendup.com/"
+              href="https://reinventadas5-0.tiendup.com/page/disenar-tu-proxima-etapa"
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-terracotta hover:bg-terracotta/80 transition-colors duration-300 shadow-md"
@@ -485,7 +485,7 @@ export default function Landing() {
               Los talleres son también una oportunidad para conectar con otras mujeres que están viviendo procesos similares.
             </p>
             <a
-              href="https://reinventadas5-0.tiendup.com/"
+              href="https://reinventadas5-0.tiendup.com/page/disenar-tu-proxima-etapa"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-10 py-5 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-ink hover:bg-terracotta transition-colors duration-300"

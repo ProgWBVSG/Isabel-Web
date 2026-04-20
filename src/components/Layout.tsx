@@ -64,7 +64,7 @@ export default function Layout({ children }: LayoutProps) {
                 </Link>
               ))}
               <a
-                href="https://reinventadas5-0.tiendup.com/"
+                href="https://reinventadas5-0.tiendup.com/page/disenar-tu-proxima-etapa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-ink text-cream px-6 py-2.5 rounded-full text-sm font-medium hover:bg-terracotta transition-colors"
@@ -107,7 +107,7 @@ export default function Layout({ children }: LayoutProps) {
                 </Link>
               ))}
               <a
-                href="https://reinventadas5-0.tiendup.com/"
+                href="https://reinventadas5-0.tiendup.com/page/disenar-tu-proxima-etapa"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}

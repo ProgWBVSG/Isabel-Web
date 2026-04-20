@@ -102,7 +102,7 @@ export default function SobreMi() {
               "Si yo pude reinventarme, vos también podés. Solo necesitás dar el primer paso."
             </p>
             <a
-              href="https://reinventadas5-0.tiendup.com/"
+              href="https://reinventadas5-0.tiendup.com/page/disenar-tu-proxima-etapa"
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 inline-flex items-center gap-2 px-8 py-4 text-sm tracking-widest uppercase font-medium rounded-full text-cream bg-terracotta hover:bg-terracotta/80 transition-colors duration-300 shadow-md"
