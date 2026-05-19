@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Send, Plus, Search, Calendar, CheckCircle2, Clock, Trash2, ArrowLeft } from 'lucide-react';
 
 export default function AdminCampaigns() {
@@ -9,34 +9,70 @@ export default function AdminCampaigns() {
   const [isSending, setIsSending] = useState(false);
   const [success, setSuccess] = useState(false);
   const [search, setSearch] = useState('');
+  
+  const [totalSubscribers, setTotalSubscribers] = useState<number | null>(null);
+  const [campaigns, setCampaigns] = useState<any[]>([]);
+  const [isLoadingStats, setIsLoadingStats] = useState(true);
 
-  // Datos mock para el diseño inicial
-  const [campaigns] = useState([
-    { id: 1, subject: 'Bienvenida al Círculo de Mujeres 2024', status: 'sent', date: '2024-01-15', recipients: 142 },
-    { id: 2, subject: 'Nuevo taller: Liderazgo Femenino en Tiempos de Crisis', status: 'sent', date: '2024-02-02', recipients: 205 },
-    { id: 3, subject: 'Borrador: Oferta Mentoría 1:1', status: 'draft', date: '2024-03-10', recipients: 0 },
-    { id: 4, subject: 'Recordatorio sesión gratuita', status: 'sent', date: '2024-03-20', recipients: 310 },
-  ]);
+  useEffect(() => {
+    const fetchStats = async () => {
+      setIsLoadingStats(true);
+      try {
+        const res = await fetch('/api/mailerlite-stats');
+        if (res.ok) {
+          const data = await res.json();
+          setTotalSubscribers(data.totalSubscribers || 0);
+          if (data.campaigns && data.campaigns.length > 0) {
+            setCampaigns(data.campaigns);
+          }
+        }
+      } catch (e) {
+        console.error('Error fetching stats:', e);
+      } finally {
+        setIsLoadingStats(false);
+      }
+    };
+    
+    // Solo carga al montar o al volver a la lista para ver si hay cambios
+    if (activeTab === 'list') {
+      fetchStats();
+    }
+  }, [activeTab]);
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!subject || !content) return;
     
     setIsSending(true);
-    // TODO: Conectar a API de MailerLite
-    await new Promise(r => setTimeout(r, 2500)); 
-    setIsSending(false);
-    setSuccess(true);
     
-    setTimeout(() => {
-      setSuccess(false);
-      setSubject('');
-      setContent('');
-      setActiveTab('list');
-    }, 3000);
+    try {
+      const res = await fetch('/api/mailerlite-campaigns', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ subject, content, audience })
+      });
+      
+      if (!res.ok) {
+        const errorData = await res.json();
+        alert('Hubo un error al enviar: ' + (errorData.error || 'Error desconocido'));
+      } else {
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+          setSubject('');
+          setContent('');
+          setActiveTab('list');
+        }, 3000);
+      }
+    } catch (e) {
+      alert('Error de conexión con el servidor.');
+      console.error(e);
+    } finally {
+      setIsSending(false);
+    }
   };
 
-  const filteredCampaigns = campaigns.filter(c => c.subject.toLowerCase().includes(search.toLowerCase()));
+  const filteredCampaigns = campaigns.filter(c => c.subject?.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div className="max-w-6xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -45,7 +81,9 @@ export default function AdminCampaigns() {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h1 className="text-3xl font-serif font-light text-ink">Campañas de Correo</h1>
-          <p className="text-ink/50 mt-1 text-sm">Conecta con tus leads y alumnas de forma directa.</p>
+          <p className="text-ink/50 mt-1 text-sm">
+            Conecta con tus leads y alumnas. Suscriptores totales: {isLoadingStats ? '...' : totalSubscribers}
+          </p>
         </div>
         
         {activeTab === 'list' ? (
@@ -84,7 +122,13 @@ export default function AdminCampaigns() {
           </div>
 
           {/* List */}
-          <div className="divide-y divide-ink/5">
+          <div className="divide-y divide-ink/5 relative min-h-[200px]">
+            {isLoadingStats && campaigns.length === 0 && (
+              <div className="absolute inset-0 flex items-center justify-center bg-white/50 backdrop-blur-sm z-10">
+                <span className="w-8 h-8 border-4 border-terracotta/20 border-t-terracotta rounded-full animate-spin" />
+              </div>
+            )}
+            
             {filteredCampaigns.map((campaign) => (
               <div key={campaign.id} className="p-5 hover:bg-cream/10 transition-colors flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group">
                 <div className="flex items-start gap-4">
@@ -94,7 +138,10 @@ export default function AdminCampaigns() {
                   <div>
                     <h3 className="font-medium text-ink group-hover:text-terracotta transition-colors">{campaign.subject}</h3>
                     <div className="flex items-center gap-4 mt-2 text-xs text-ink/40">
-                      <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {campaign.date}</span>
+                      <span className="flex items-center gap-1.5">
+                        <Calendar className="w-3.5 h-3.5" /> 
+                        {new Date(campaign.date).toLocaleDateString()}
+                      </span>
                       {campaign.status === 'sent' && (
                         <span className="flex items-center gap-1.5"><UsersIcon className="w-3.5 h-3.5" /> {campaign.recipients} destinatarios</span>
                       )}
@@ -108,22 +155,16 @@ export default function AdminCampaigns() {
                       ? 'bg-green-500/5 text-green-600 border-green-500/20' 
                       : 'bg-ink/5 text-ink/50 border-ink/10'
                   }`}>
-                    {campaign.status === 'sent' ? 'Enviado' : 'Borrador'}
+                    {campaign.status === 'sent' ? 'Enviado' : (campaign.status === 'draft' ? 'Borrador' : campaign.status)}
                   </span>
-                  
-                  {campaign.status === 'draft' && (
-                    <button className="p-2 text-red-400 hover:bg-red-50 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
-                      <Trash2 className="w-4 h-4" />
-                    </button>
-                  )}
                 </div>
               </div>
             ))}
             
-            {filteredCampaigns.length === 0 && (
+            {!isLoadingStats && filteredCampaigns.length === 0 && (
               <div className="p-12 text-center text-ink/40">
                 <Mail className="w-12 h-12 mx-auto opacity-20 mb-3" />
-                <p>No se encontraron campañas</p>
+                <p>No se encontraron campañas recientes</p>
               </div>
             )}
           </div>
@@ -139,7 +180,7 @@ export default function AdminCampaigns() {
                 <CheckCircle2 className="w-8 h-8" />
               </div>
               <h2 className="text-2xl font-serif text-ink mb-2">¡Campaña Enviada!</h2>
-              <p className="text-ink/50 text-sm">Tus leads recibirán el correo en breve.</p>
+              <p className="text-ink/50 text-sm">El correo fue enviado exitosamente mediante MailerLite.</p>
             </div>
           )}
 
@@ -177,7 +218,7 @@ export default function AdminCampaigns() {
                   </div>
                   <div>
                     <p className={`text-sm font-medium ${audience === 'newsletter' ? 'text-terracotta' : 'text-ink'}`}>Suscriptores Newsletter</p>
-                    <p className="text-xs mt-1 opacity-70">Envía a tu segmento activo del newsletter (aprox. 140 contactos).</p>
+                    <p className="text-xs mt-1 opacity-70">El segmento activo ({totalSubscribers !== null ? totalSubscribers : '...'} contactos).</p>
                   </div>
                 </button>
 
@@ -198,7 +239,7 @@ export default function AdminCampaigns() {
                   </div>
                   <div>
                     <p className={`text-sm font-medium ${audience === 'all' ? 'text-terracotta' : 'text-ink'}`}>Toda la Base de Datos</p>
-                    <p className="text-xs mt-1 opacity-70">Envía a todos los leads y alumnas registrados (aprox. 340 contactos).</p>
+                    <p className="text-xs mt-1 opacity-70">Todos los leads de MailerLite ({totalSubscribers !== null ? totalSubscribers : '...'} contactos).</p>
                   </div>
                 </button>
               </div>
@@ -215,7 +256,7 @@ export default function AdminCampaigns() {
                 className="w-full px-4 py-4 bg-cream/10 border border-ink/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracotta/20 focus:border-terracotta transition-all resize-y text-ink leading-relaxed"
               ></textarea>
               <p className="text-xs text-ink/40 mt-2 flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5" /> El diseño final incluirá tu logo y pie de página corporativo automáticamente.
+                <Mail className="w-3.5 h-3.5" /> Será procesado y despachado con tu remitente por defecto de MailerLite.
               </p>
             </div>
           </div>
@@ -245,7 +286,6 @@ export default function AdminCampaigns() {
   );
 }
 
-// Helper icon
 function UsersIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
