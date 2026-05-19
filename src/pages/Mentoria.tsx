@@ -1,5 +1,9 @@
 import { motion } from 'motion/react';
 import { CheckCircle2 } from 'lucide-react';
+import { renderText } from '../utils/text';
+import siteContent from '../data/content.json';
+
+const content: Record<string, string> = siteContent as any;
 
 export default function Mentoria() {
   return (
@@ -13,11 +17,11 @@ export default function Mentoria() {
           className="max-w-4xl mx-auto px-6 lg:px-12 text-center"
         >
           <motion.h2 variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.7 }} className="text-5xl font-serif font-light text-ink mb-6">
-            Mentoría <span className="italic text-terracotta">individual</span>
+            {renderText(content.mentoria_title, "Mentoría *individual*")}
           </motion.h2>
-          <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-xl text-ink-light font-light mb-8 leading-relaxed max-w-2xl mx-auto">
-            Las sesiones individuales están pensadas para mujeres que sienten que están atravesando una transición profunda y quieren un espacio de acompañamiento personal.
-          </motion.p>
+          <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-xl text-ink-light font-light mb-8 leading-relaxed max-w-2xl mx-auto">
+            {renderText(content.mentoria_desc, "Las sesiones individuales están pensadas para mujeres que sienten que están atravesando una transición profunda y quieren un espacio de acompañamiento personal.")}
+          </motion.div>
           <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.5 }} className="text-lg text-ink-light font-light mb-10">
             En las sesiones trabajamos temas como:
           </motion.p>

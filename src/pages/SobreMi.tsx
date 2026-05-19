@@ -1,5 +1,9 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { renderText } from '../utils/text';
+import siteContent from '../data/content.json';
+
+const content: Record<string, string> = siteContent as any;
 
 export default function SobreMi() {
   return (
@@ -15,66 +19,15 @@ export default function SobreMi() {
           >
             <motion.div variants={{ hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.7 }} className="order-2 lg:order-1">
               <h2 className="text-5xl font-serif font-light text-ink mb-8">
-                Soy <span className="italic text-terracotta">Isabel Martínez de Campos</span>
+                {renderText(content.sobremi_title, "Soy *Isabel Martínez de Campos*")}
               </h2>
               <div className="space-y-6 text-lg text-ink-light font-light leading-relaxed">
-                <p className="text-terracotta font-medium tracking-widest uppercase text-sm">
-                  Periodista • Emprendedora • Midlife Coach
-                </p>
-                <p>
-                  Y, sobre todo, una mujer que también atravesó esta etapa.
-                </p>
-                <p>
-                  Durante años trabajé sin parar. Primero como periodista y luego como dueña de una agencia de contenidos.
-                </p>
-                <p>
-                  Mi vida era trabajo. Clientes. Plazos. Noches sin dormir.
-                </p>
-                <p>
-                  Muchas veces me preguntaba: ¿Por qué sigo haciendo esto?
-                </p>
-                <p>
-                  La respuesta era clara: sostener a mi familia, darles a mis hijos una buena vida.
-                </p>
-                <p className="text-xl font-serif italic text-terracotta">
-                  Pero dentro mío empezó a crecer otra pregunta: ¿Esto es todo?
-                </p>
-                <p>
-                  Cuando cumplí 50 empecé a mirar a mi alrededor y descubrí algo que me impactó profundamente.
-                </p>
-                <p>
-                  Muchas mujeres estaban atravesando lo mismo:
-                </p>
-                <ul className="space-y-2 pl-2">
-                  <li className="flex gap-3"><span className="text-terracotta">—</span>depresión silenciosa,</li>
-                  <li className="flex gap-3"><span className="text-terracotta">—</span>separaciones.</li>
-                  <li className="flex gap-3"><span className="text-terracotta">—</span>nido vacío.</li>
-                  <li className="flex gap-3"><span className="text-terracotta">—</span>miedo al paso del tiempo.</li>
-                  <li className="flex gap-3"><span className="text-terracotta">—</span>dificultad para reinventarse laboralmente.</li>
-                  <li className="flex gap-3"><span className="text-terracotta">—</span>sueños postergados.</li>
-                </ul>
-                <p>
-                  Y algo aún más profundo: la sensación de volverse invisibles en una sociedad que idolatra la juventud.
-                </p>
-                <p>
-                  Fue entonces cuando decidí estudiar coaching.
-                </p>
-                <p>
-                  No fue una solución mágica, pero me dio herramientas para comprender algo muy importante:
-                  la mitad de la vida puede ser un momento de transformación.
-                </p>
-                <p className="text-2xl font-serif italic text-ink my-8 border-l-2 border-terracotta pl-6">
-                  Sin embargo, me llevó diez años animarme a crear este proyecto. Diez años luchando contra mis propios miedos, la procrastinación y esa voz interna que decía que ya era tarde.
-                </p>
-                <p>
-                  Hasta que entendí algo:
-                </p>
-                <p className="text-xl font-serif italic text-terracotta">
-                  si tantas mujeres están pasando por esto, necesitamos espacios donde hablarlo, entenderlo y transformarlo.
-                </p>
-                <p>
-                  Así nació Reinventadas 5.0. Una comunidad para mujeres que quieren vivir esta etapa con más conciencia, libertad y propósito.
-                </p>
+                {renderText(
+                  content.sobremi_intro,
+                  "Periodista • Emprendedora • Midlife Coach\n\nY, sobre todo, una mujer que también atravesó esta etapa.",
+                  "text-terracotta font-medium tracking-widest uppercase text-sm"
+                )}
+                {renderText(content.sobremi_historia, "Durante años trabajé sin parar...\n\n*Pero dentro mío empezó a crecer otra pregunta...*")}
               </div>
             </motion.div>
             <motion.div variants={{ hidden: { opacity: 0, x: 40 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.7 }} className="order-1 lg:order-2 relative">

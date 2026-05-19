@@ -1,5 +1,9 @@
 import { motion } from 'motion/react';
 import { Mic, Newspaper, ExternalLink } from 'lucide-react';
+import { renderText } from '../utils/text';
+import siteContent from '../data/content.json';
+
+const content: Record<string, string> = siteContent as any;
 
 export default function Prensa() {
   return (
@@ -14,11 +18,11 @@ export default function Prensa() {
             className="mb-16 text-center"
           >
             <h2 className="text-5xl md:text-6xl font-serif font-light text-ink mb-6">
-              Reinventadas <span className="italic text-terracotta">en los Medios</span>
+              {renderText(content.prensa_title, "Reinventadas *en los Medios*")}
             </h2>
-            <p className="text-xl text-ink-light font-light max-w-2xl mx-auto">
-              Conversaciones, entrevistas y artículos sobre la segunda mitad de la vida.
-            </p>
+            <div className="text-xl text-ink-light font-light max-w-2xl mx-auto">
+              {renderText(content.prensa_desc, "Conversaciones, entrevistas y artículos sobre la segunda mitad de la vida.")}
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">

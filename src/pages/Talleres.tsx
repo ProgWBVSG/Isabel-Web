@@ -1,5 +1,9 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { renderText } from '../utils/text';
+import siteContent from '../data/content.json';
+
+const content: Record<string, string> = siteContent as any;
 
 export default function Talleres() {
   return (
@@ -14,11 +18,11 @@ export default function Talleres() {
             className="mb-16"
           >
             <h2 className="text-5xl md:text-6xl font-serif font-light text-ink mb-6">
-              Talleres para <span className="italic text-terracotta">mujeres 50+</span>
+              {renderText(content.talleres_title, "Talleres para *mujeres 50+*")}
             </h2>
-            <p className="text-xl text-ink-light font-light max-w-2xl">
-              Espacios grupales donde trabajamos los grandes temas de esta etapa de la vida.
-            </p>
+            <div className="text-xl text-ink-light font-light max-w-2xl">
+              {renderText(content.talleres_desc, "Espacios grupales donde trabajamos los grandes temas de esta etapa de la vida.")}
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

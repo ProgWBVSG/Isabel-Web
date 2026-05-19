@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, CheckCircle2, Star, Mail, Mic, Newspaper, ExternalLink } from 'lucide-react';
+import { supabase } from '../lib/supabase';
+import { renderText } from '../utils/text';
+import siteContent from '../data/content.json';
+
+const content: Record<string, string> = siteContent as any;
 
 const QUOTES = [
   { text: "Nunca es tarde para empezar.", bg: "bg-terracotta", textColor: "text-cream" },
@@ -27,15 +32,30 @@ export default function Landing() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setEmail('');
-      setName('');
-    }, 1500);
+
+    try {
+      // Insertar lead en Supabase
+      const { error } = await supabase.from('leads').insert({
+        nombre: name.trim(),
+        email: email.trim().toLowerCase(),
+        origen: 'formulario_guia_gratis',
+      });
+
+      if (error) {
+        console.error('Error guardando lead:', error.message);
+      }
+    } catch (err) {
+      console.error('Error de conexión:', err);
+    }
+
+    // Siempre mostramos éxito al usuario (no bloqueamos por error de DB)
+    setIsSubmitting(false);
+    setIsSuccess(true);
+    setEmail('');
+    setName('');
   };
 
   return (
@@ -56,15 +76,14 @@ export default function Landing() {
               Midlife Coaching
             </span>
             <h1 className="text-6xl md:text-7xl lg:text-[5.5rem] font-serif font-light text-ink leading-[1.1] mb-8 text-balance">
-              La segunda mitad de tu vida puede ser <span className="text-terracotta italic">la mejor</span>.
+              {renderText(content.landing_hero_title, "La segunda mitad de tu vida puede ser *la mejor*.")}
             </h1>
             <p className="text-lg md:text-xl text-ink-light mb-4 leading-relaxed max-w-lg font-light">
-              Por <span className="font-medium text-ink">Isabel Martínez de Campos</span><br />
-              <span className="text-sm tracking-widest uppercase text-terracotta">Midlife Coach</span>
+              {renderText(content.landing_hero_subtitle, "Por *Isabel Martínez de Campos*\nMidlife Coach", "font-medium text-ink")}
             </p>
-            <p className="text-lg text-ink-light mb-10 leading-relaxed max-w-lg font-light">
-              Si tienes más de 50 años y sientes que algo dentro tuyo está cambiando, no estás sola.
-            </p>
+            <div className="text-lg text-ink-light mb-10 leading-relaxed max-w-lg font-light">
+              {renderText(content.landing_hero_desc, "Si tienes más de 50 años y sientes que algo dentro tuyo está cambiando, no estás sola.")}
+            </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="https://reinventadas5-0.tiendup.com/page/disenar-tu-proxima-etapa"
@@ -204,43 +223,31 @@ export default function Landing() {
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
-            className="space-y-6 text-lg text-ink-light font-light leading-relaxed"
+            className="space-y-6 text-lg text-ink-light font-light leading-relaxed intro-content"
           >
-            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }}>
-              Muchas mujeres llegan a esta etapa con preguntas profundas:
-            </motion.p>
-            <motion.ul variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} className="list-none space-y-2 pl-0">
-              <li className="font-serif italic text-xl text-ink">¿Quién soy ahora?</li>
-              <li className="font-serif italic text-xl text-ink">¿Qué quiero hacer con los próximos años de mi vida?</li>
-              <li className="font-serif italic text-xl text-ink">¿Todavía estoy a tiempo de reinventarme?</li>
-            </motion.ul>
-            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }}>
-              Durante décadas fuimos madres, profesionales, parejas, cuidadoras, sostén de muchos.
-              Pero llega un momento en el que algo adentro empieza a decir:
-            </motion.p>
-            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }} className="text-2xl font-serif italic text-terracotta">
-              "Ahora me toca a mí".
-            </motion.p>
-            <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }}>
-              Reinventadas 5.0 nace para acompañar a mujeres que están atravesando esta transición.
-              Mujeres que sienten que la segunda mitad de su vida puede ser también el comienzo de algo nuevo.
-            </motion.p>
+            <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: 0.6 }}>
+              {renderText(content.landing_intro, "Muchas mujeres llegan a esta etapa con preguntas profundas...")}
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* 2. THE PROBLEM (MANIFESTO) */}
       <section className="py-32 bg-ink text-cream px-6 lg:px-12">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+        <div className="max-w-4xl mx-auto text-center manifesto-content">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-serif font-light leading-tight text-balance mb-12"
+            className="text-3xl md:text-5xl font-serif font-light leading-tight md:leading-tight space-y-8"
           >
-            La crisis de los +50 de la que <span className="italic text-pink">casi nadie habla</span>
-          </motion.h2>
+            {renderText(
+              content.landing_manifesto,
+              "El mayor problema no es cumplir años...\n\nPero es exactamente al revés.",
+              "italic text-terracotta"
+            )}
+          </motion.div>
 
           <motion.div
             initial="hidden"

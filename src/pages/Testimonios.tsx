@@ -1,7 +1,12 @@
 import { motion } from 'motion/react';
 import { Star } from 'lucide-react';
+import dynamicTestimonios from '../data/testimonials.json';
+import { renderText } from '../utils/text';
+import siteContent from '../data/content.json';
 
-const testimonios = [
+const content: Record<string, string> = siteContent as any;
+
+const defaultTestimonios = [
   {
     name: "Marta Garcés",
     age: "58",
@@ -22,6 +27,17 @@ const testimonios = [
   },
 ];
 
+// Mapear los testimonios dinámicos al formato esperado
+const mappedDynamicTestimonios = (dynamicTestimonios || []).map((t: any) => ({
+  name: t.author_name,
+  age: t.author_role || '', // Usamos el rol como edad si se proporcionó
+  image: "https://i.postimg.cc/XvRM9mgw/Captura-de-pantalla-2026-04-06-130543.png", // Imagen genérica por ahora (o podríamos agregar un campo de imagen)
+  quote: t.content,
+}));
+
+// Si hay testimonios configurados, usar esos. Si no, usar los por defecto.
+const testimonios = mappedDynamicTestimonios.length > 0 ? mappedDynamicTestimonios : defaultTestimonios;
+
 export default function Testimonios() {
   return (
     <div className="flex flex-col min-h-screen pt-20 bg-olive text-cream">
@@ -34,8 +50,12 @@ export default function Testimonios() {
             transition={{ duration: 0.7 }}
             className="text-center mb-14"
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-light mb-4">Historias Reales</h2>
-            <p className="text-lg font-light text-cream/70">Mujeres que ya están vibrando.</p>
+            <h2 className="text-4xl md:text-5xl font-serif font-light mb-4">
+              {renderText(content.testimonios_page_title, "Historias Reales")}
+            </h2>
+            <div className="text-lg font-light text-cream/70">
+              {renderText(content.testimonios_page_subtitle, "Mujeres que ya están vibrando.")}
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
