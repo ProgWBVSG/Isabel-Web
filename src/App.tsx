@@ -18,6 +18,7 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminLeads from './pages/admin/AdminLeads';
 import AdminTestimonials from './pages/admin/AdminTestimonials';
 import AdminContent from './pages/admin/AdminContent';
+import AdminCampaigns from './pages/admin/AdminCampaigns';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminLayout from './components/AdminLayout';
 
@@ -45,6 +46,11 @@ export default function App() {
         <Route path="/admin/leads" element={
           <ProtectedRoute>
             <AdminLayout><AdminLeads /></AdminLayout>
+          </ProtectedRoute>
+        } />
+        <Route path="/admin/campanas" element={
+          <ProtectedRoute>
+            <AdminLayout><AdminCampaigns /></AdminLayout>
           </ProtectedRoute>
         } />
         <Route path="/admin/testimonios" element={

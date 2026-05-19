@@ -12,6 +12,7 @@ import {
   ChevronRight,
   UploadCloud,
   CheckCircle2,
+  Send,
 } from 'lucide-react';
 
 interface AdminLayoutProps {
@@ -21,6 +22,7 @@ interface AdminLayoutProps {
 const navItems = [
   { name: 'Dashboard', path: '/admin', icon: LayoutDashboard },
   { name: 'Leads (CRM)', path: '/admin/leads', icon: Users },
+  { name: 'Campañas', path: '/admin/campanas', icon: Send },
   { name: 'Testimonios', path: '/admin/testimonios', icon: MessageSquareQuote },
   { name: 'Textos Web', path: '/admin/textos', icon: FileText },
 ];
