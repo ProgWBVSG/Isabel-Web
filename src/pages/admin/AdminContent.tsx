@@ -49,8 +49,14 @@ export default function AdminContent() {
     );
     await Promise.all(updates);
 
-    // Refresh data
-    await fetchContent();
+    // Actualizar el estado local sin re-fetch (evita el flash de desaparición)
+    setContent((prev) =>
+      prev.map((item) =>
+        changes[item.id] !== undefined
+          ? { ...item, text_value: changes[item.id] }
+          : item
+      )
+    );
     setChanges({});
     setSaving(false);
     setSaved(true);

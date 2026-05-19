@@ -168,24 +168,27 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
           </div>
           
           <div className="flex items-center gap-3">
-            {publishSuccess && (
-              <span className="hidden sm:flex items-center gap-1.5 text-green-600 text-xs tracking-widest uppercase">
-                <CheckCircle2 className="w-4 h-4" /> Publicando...
-              </span>
+            {publishSuccess ? (
+              <div className="flex items-center gap-2 px-4 py-2.5 bg-green-500/10 text-green-700 border border-green-500/20 text-xs rounded-xl tracking-widest uppercase font-bold shadow-sm">
+                <CheckCircle2 className="w-4 h-4" />
+                <span className="hidden sm:inline">¡Ya publicado!</span>
+                <span className="sm:hidden">¡Listo!</span>
+              </div>
+            ) : (
+              <button
+                onClick={handlePublish}
+                disabled={isPublishing}
+                className="flex items-center gap-2 px-4 py-2.5 bg-ink text-cream text-xs rounded-xl hover:bg-ink/80 disabled:opacity-50 transition-all tracking-widest uppercase font-medium shadow-md"
+              >
+                {isPublishing ? (
+                  <span className="w-4 h-4 border-2 border-cream/30 border-t-cream rounded-full animate-spin" />
+                ) : (
+                  <UploadCloud className="w-4 h-4" />
+                )}
+                <span className="hidden sm:inline">{isPublishing ? 'Enviando...' : 'Publicar Web'}</span>
+                <span className="sm:hidden">{isPublishing ? '...' : 'Publicar'}</span>
+              </button>
             )}
-            <button
-              onClick={handlePublish}
-              disabled={isPublishing}
-              className="flex items-center gap-2 px-4 py-2.5 bg-ink text-cream text-xs rounded-xl hover:bg-ink/80 disabled:opacity-50 transition-all tracking-widest uppercase font-medium"
-            >
-              {isPublishing ? (
-                <span className="w-4 h-4 border-2 border-cream/30 border-t-cream rounded-full animate-spin" />
-              ) : (
-                <UploadCloud className="w-4 h-4" />
-              )}
-              <span className="hidden sm:inline">{isPublishing ? 'Enviando...' : 'Publicar Web'}</span>
-              <span className="sm:hidden">{isPublishing ? '...' : 'Publicar'}</span>
-            </button>
           </div>
         </header>
 
