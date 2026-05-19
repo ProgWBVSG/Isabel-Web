@@ -52,6 +52,29 @@ export default function AdminLeads() {
   const updateStatus = async (id: string, newStatus: string) => {
     await supabase.from('leads').update({ status: newStatus }).eq('id', id);
     setLeads((prev) => prev.map((l) => (l.id === id ? { ...l, status: newStatus } : l)));
+    
+    // Si cambia a estado newsletter, enviar a MailerLite
+    if (newStatus === 'newsletter') {
+      const lead = leads.find(l => l.id === id);
+      if (lead) {
+        syncToMailerLite(lead.email, lead.nombre);
+      }
+    }
+  };
+
+  const syncToMailerLite = async (email: string, name: string) => {
+    try {
+      const res = await fetch('/api/mailerlite', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, name })
+      });
+      if (res.ok) {
+        console.log('Agregado a MailerLite');
+      }
+    } catch(e) {
+      console.error('Error sincronizando con MailerLite', e);
+    }
   };
 
   const saveNotes = async (id: string) => {
@@ -74,6 +97,11 @@ export default function AdminLeads() {
     if (!error && data) {
       setLeads([data[0], ...leads]);
       setIsAdding(false);
+      
+      if (newLead.status === 'newsletter') {
+        syncToMailerLite(newLead.email, newLead.nombre);
+      }
+      
       setNewLead({ nombre: '', email: '', telefono: '', status: 'nuevo', origen: 'agregado_manual' });
     } else {
       alert('Error al agregar el lead');
