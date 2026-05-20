@@ -46,7 +46,7 @@ export default function AdminCampaigns() {
     setIsSending(true);
     
     try {
-      const res = await fetch('/api/mailerlite-campaigns', {
+      const res = await fetch('/api/resend-campaigns', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ subject, content, audience })
@@ -180,7 +180,7 @@ export default function AdminCampaigns() {
                 <CheckCircle2 className="w-8 h-8" />
               </div>
               <h2 className="text-2xl font-serif text-ink mb-2">¡Campaña Enviada!</h2>
-              <p className="text-ink/50 text-sm">El correo fue enviado exitosamente mediante MailerLite.</p>
+              <p className="text-ink/50 text-sm">El correo fue enviado exitosamente a todos los contactos.</p>
             </div>
           )}
 
@@ -198,7 +198,7 @@ export default function AdminCampaigns() {
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-ink/70 mb-2 uppercase tracking-widest text-[11px]">Destinatarios (MailerLite)</label>
+              <label className="block text-sm font-medium text-ink/70 mb-2 uppercase tracking-widest text-[11px]">Destinatarios</label>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Opción Newsletter */}
@@ -256,7 +256,7 @@ export default function AdminCampaigns() {
                 className="w-full px-4 py-4 bg-cream/10 border border-ink/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-terracotta/20 focus:border-terracotta transition-all resize-y text-ink leading-relaxed"
               ></textarea>
               <p className="text-xs text-ink/40 mt-2 flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5" /> Será procesado y despachado con tu remitente por defecto de MailerLite.
+                <Mail className="w-3.5 h-3.5" /> Será despachado con el remitente de contacto@reinventadas50.com usando Resend.
               </p>
             </div>
           </div>
@@ -270,12 +270,12 @@ export default function AdminCampaigns() {
               {isSending ? (
                 <>
                   <span className="w-5 h-5 border-2 border-cream/30 border-t-cream rounded-full animate-spin" />
-                  Enviando a MailerLite...
+                  Enviando Campaña...
                 </>
               ) : (
                 <>
                   <Send className="w-5 h-5" />
-                  Enviar a MailerLite
+                  Enviar Campaña Masiva
                 </>
               )}
             </button>
