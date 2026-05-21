@@ -104,7 +104,8 @@ export default function AdminLeads() {
       
       setNewLead({ nombre: '', email: '', telefono: '', status: 'nuevo', origen: 'agregado_manual' });
     } else {
-      alert('Error al agregar el lead');
+      console.error('Error supabase:', error);
+      alert(`Error al agregar: ${error?.message || 'Error desconocido'}`);
     }
   };
 
