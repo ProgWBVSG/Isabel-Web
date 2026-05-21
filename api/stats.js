@@ -1,11 +1,20 @@
 export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  // CORS — solo permitir nuestro dominio
+  const allowedOrigins = ['https://www.reinventadas50.com', 'https://reinventadas50.com'];
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
+  }
+
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
   const SUPABASE_URL = process.env.VITE_SUPABASE_URL;
@@ -16,8 +25,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Obtener total de leads de Supabase
-    // Usando el endpoint REST de Supabase con exact count
+    // Obtener total de leads de Supabase usando HEAD con count exacto
     const response = await fetch(`${SUPABASE_URL}/rest/v1/leads?select=id`, {
       method: 'GET',
       headers: {
@@ -38,19 +46,15 @@ export default async function handler(req, res) {
     if (contentRange) {
       const parts = contentRange.split('/');
       if (parts.length === 2) {
-        totalSubscribers = parseInt(parts[1], 10);
+        totalSubscribers = parseInt(parts[1], 10) || 0;
       }
     } else {
       // Fallback: parsear JSON
       const data = await response.json();
-      totalSubscribers = data.length;
+      totalSubscribers = Array.isArray(data) ? data.length : 0;
     }
 
-    // Simular un historial de campañas por ahora, ya que Resend no tiene endpoint fácil para leer historial sin ID en plan free, 
-    // o podríamos guardarlo en base de datos después.
-    const campaigns = [];
-
-    return res.status(200).json({ totalSubscribers, campaigns });
+    return res.status(200).json({ totalSubscribers, campaigns: [] });
   } catch (error) {
     console.error('Error fetching stats:', error);
     return res.status(500).json({ error: 'Fallo al obtener estadísticas' });
