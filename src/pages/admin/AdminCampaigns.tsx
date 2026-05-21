@@ -18,7 +18,7 @@ export default function AdminCampaigns() {
     const fetchStats = async () => {
       setIsLoadingStats(true);
       try {
-        const res = await fetch('/api/mailerlite-stats');
+        const res = await fetch('/api/stats');
         if (res.ok) {
           const data = await res.json();
           setTotalSubscribers(data.totalSubscribers || 0);
@@ -239,7 +239,7 @@ export default function AdminCampaigns() {
                   </div>
                   <div>
                     <p className={`text-sm font-medium ${audience === 'all' ? 'text-terracotta' : 'text-ink'}`}>Toda la Base de Datos</p>
-                    <p className="text-xs mt-1 opacity-70">Todos los leads de MailerLite ({totalSubscribers !== null ? totalSubscribers : '...'} contactos).</p>
+                    <p className="text-xs mt-1 opacity-70">Todos los contactos en tu CRM ({totalSubscribers !== null ? totalSubscribers : '...'} contactos).</p>
                   </div>
                 </button>
               </div>

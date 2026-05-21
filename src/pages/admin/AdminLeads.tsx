@@ -93,19 +93,31 @@ export default function AdminLeads() {
     e.preventDefault();
     if (!newLead.nombre || !newLead.email) return;
     
-    const { data, error } = await supabase.from('leads').insert([newLead]).select();
-    if (!error && data) {
-      setLeads([data[0], ...leads]);
-      setIsAdding(false);
+    try {
+      const res = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newLead)
+      });
       
-      if (newLead.status === 'newsletter') {
-        syncToMailerLite(newLead.email, newLead.nombre);
+      const responseData = await res.json();
+      
+      if (res.ok && responseData.success) {
+        setLeads([responseData.data[0], ...leads]);
+        setIsAdding(false);
+        
+        if (newLead.status === 'newsletter') {
+          syncToMailerLite(newLead.email, newLead.nombre);
+        }
+        
+        setNewLead({ nombre: '', email: '', telefono: '', status: 'nuevo', origen: 'agregado_manual' });
+      } else {
+        console.error('Error supabase/api:', responseData);
+        alert(`Error al agregar: ${responseData.error || 'Error desconocido'}`);
       }
-      
-      setNewLead({ nombre: '', email: '', telefono: '', status: 'nuevo', origen: 'agregado_manual' });
-    } else {
-      console.error('Error supabase:', error);
-      alert(`Error al agregar: ${error?.message || 'Error desconocido'}`);
+    } catch (err: any) {
+      console.error('Fetch error:', err);
+      alert(`Error de red: ${err.message}`);
     }
   };
 
